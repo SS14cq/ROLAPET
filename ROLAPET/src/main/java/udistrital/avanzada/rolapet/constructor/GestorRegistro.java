@@ -40,14 +40,15 @@ public class GestorRegistro implements ActionListener {
             }
 
             Usuario nuevo = new Usuario(
-                    formulario.getNombre(),
-                    formulario.getApellido(),
-                    formulario.getCedula(),
-                    formulario.getCorreo(),
-                    formulario.getCelular(),
-                    formulario.getNombreUsuario(),
-                    formulario.getContrasena()
-            );
+                formulario.getNombreUsuario(),
+                formulario.getContrasena(),
+                formulario.getNombre(),
+                formulario.getApellido(),
+                formulario.getCedula(),
+                formulario.getCorreo(),
+                formulario.getCelular()
+);
+
             if (controladorUsuario.registrarUsuario(nuevo)) {
                 JOptionPane.showMessageDialog(formulario, "Registro exitoso");
                 formulario.limpiarCampos();

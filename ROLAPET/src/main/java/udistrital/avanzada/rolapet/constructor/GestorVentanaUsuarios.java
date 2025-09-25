@@ -42,7 +42,11 @@ public class GestorVentanaUsuarios implements ActionListener {
                 formularioInicioSesion.dispose();
                 ventanaUsuarios.dispose();
                 ventanaInicio.dispose();
-                // Aquí abrir ventana principal o siguiente funcionalidad
+
+                // Abrir ventana de registro de vehículo
+                VentanaRegistroVehiculo ventanaRegistro = new VentanaRegistroVehiculo();
+                ControladorVehiculo controladorVehiculo = new ControladorVehiculo();
+                GestorRegistroVehiculo gestorRegistro = new GestorRegistroVehiculo(ventanaRegistro, controladorVehiculo);
 
             } else {
                 JOptionPane.showMessageDialog(formularioInicioSesion, "Usuario o contraseña incorrectos");
