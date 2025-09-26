@@ -14,6 +14,7 @@ import udistrital.avanzada.rolapet.vista.VentanaInicio;
  * @version 1.1, 21-09-2025
  */
 public class Main {
+
     /**
      * Punto de entrada de la aplicación Java Swing.
      * Ejecuta el hilo de interfaz gráfica para crear y mostrar la ventana inicial.
@@ -27,11 +28,7 @@ public class Main {
 
             // Crear ventana de inicio
             VentanaInicio ventanaInicio = new VentanaInicio();
-
-            // Vincular con el gestor que maneja Usuarios y Proveedores
-            new GestorVentanaInicio(ventanaInicio, controladorUsuario);
-
-            // Mostrar ventana inicial
+            GestorVentanaInicio gestorInicio = new GestorVentanaInicio(ventanaInicio, controladorUsuario);
             ventanaInicio.setVisible(true);
         });
     }

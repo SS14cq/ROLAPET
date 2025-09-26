@@ -17,7 +17,7 @@ import java.awt.event.ActionListener;
  * </p>
  * 
  * @author Sarita
- * @version 1.0, 25-09-2025
+ * @version 1.1, 26-09-2025
  */
 public class GestorRegistroCliente implements ActionListener {
     private FormularioRegistroCliente formulario;
