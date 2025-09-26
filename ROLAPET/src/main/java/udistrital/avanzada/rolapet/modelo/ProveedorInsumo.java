@@ -8,6 +8,11 @@ package udistrital.avanzada.rolapet.modelo;
  *
  * @author sarit
  */
-public class ProveedorInsumo {
-    
+public class ProveedorInsumo extends Proveedor{
+    public ProveedorInsumo(String nombre, String apellido, String cedula, String correo, String celular){
+        super(nombre, apellido, cedula, correo, celular);
+    }
+    public String getTipoProveedor(){
+        return "Insumo";
+}
 }

@@ -4,10 +4,20 @@
  */
 package udistrital.avanzada.rolapet.modelo;
 
+import java.util.List;
+
 /**
  *
  * @author sarit
  */
-public class Administrador {
-    
+public class Administrador extends Persona {
+    public Administrador(String nombre, String apellido, String cedula, String correo, String celular){
+        super(nombre, apellido, cedula, correo, celular);
+               
+    }
+    public void registrarProveedor(Proveedor proveedor, List<Proveedor> listaProveedores){
+        if (proveedor !=null && listaProveedores != null){
+            listaProveedores.add(proveedor);
+        }
+    }
 }
