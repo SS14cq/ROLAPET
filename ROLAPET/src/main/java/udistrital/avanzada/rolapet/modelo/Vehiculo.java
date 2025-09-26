@@ -6,8 +6,7 @@ package udistrital.avanzada.rolapet.modelo;
  * Proporciona métodos para acceder y modificar estos atributos, así como una descripción del vehículo.
  * 
  * @author Sarita
- * @version 1.1
- * @since 2025-09-25 
+ * @version 1.1, 25-09-2025
  */
 public class Vehiculo {
     private String marca;

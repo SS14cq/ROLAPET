@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
  * Presenta un diseño con colores personalizados, logo y título.
  * 
  * @author Sarita
- * @version 1.3
+ * @version 1.1, 21-09-2025
  */
 public class VentanaInicio extends JFrame {
     public JButton btnUsuarios = new JButton("Usuarios");

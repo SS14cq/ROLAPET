@@ -6,7 +6,7 @@ package udistrital.avanzada.rolapet.modelo;
  * como llantas off-road e iluminación avanzada.
  * 
  * @author Sarita
- * @version 1.1
+ * @version 1.1, 25-09-2025
  */
 public class Scooter extends Vehiculo {
     private boolean llantasOffRoad;

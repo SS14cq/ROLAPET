@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
  * y presenta un diseño con logo, título y colores personalizados.
  * 
  * @author Sarita
- * @version 1.3
+ * @version 1.3, 25-09-2025
  */
 public class VentanaUsuarios extends JFrame {
     public JButton btnIniciarSesion = new JButton("Iniciar sesión");

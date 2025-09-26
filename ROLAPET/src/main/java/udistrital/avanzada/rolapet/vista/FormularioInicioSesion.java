@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
  * La interfaz utiliza un diseño con colores y fuentes personalizados.
  * 
  * @author Sarita
- * @version 1.3
+ * @version 1.1, 25-09-2025
  */
 public class FormularioInicioSesion extends JFrame {
     private JTextField txtUsuario;
@@ -95,7 +95,6 @@ public class FormularioInicioSesion extends JFrame {
 
     /**
      * Devuelve el texto ingresado en el campo de usuario.
-     * 
      * @return nombre de usuario ingresado
      */
     public String getUsuario() {
@@ -104,7 +103,6 @@ public class FormularioInicioSesion extends JFrame {
 
     /**
      * Devuelve el texto ingresado en el campo de contraseña.
-     * 
      * @return contraseña ingresada
      */
     public String getContrasena() {
@@ -113,7 +111,6 @@ public class FormularioInicioSesion extends JFrame {
 
     /**
      * Retorna el botón para ingresar, para agregar listeners de eventos.
-     * 
      * @return botón ingresar
      */
     public JButton getBtnIngresar() {
@@ -122,7 +119,6 @@ public class FormularioInicioSesion extends JFrame {
 
     /**
      * Retorna el botón para cancelar, para agregar listeners de eventos.
-     * 
      * @return botón cancelar
      */
     public JButton getBtnCancelar() {
@@ -131,7 +127,6 @@ public class FormularioInicioSesion extends JFrame {
 
     /**
      * Asigna el mismo ActionListener controlador a ambos botones de la ventana.
-     * 
      * @param controlador ActionListener que manejará los eventos
      */
     public void setControlador(ActionListener controlador) {
