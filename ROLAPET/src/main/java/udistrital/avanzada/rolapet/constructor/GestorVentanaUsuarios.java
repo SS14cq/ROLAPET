@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
  * Controla la navegación entre formularios de inicio de sesión, registro y la ventana principal.
  * 
  * @author Sarita
- * @version 1.3
+ * @version 1.3, 25-09-2025
  */
 public class GestorVentanaUsuarios implements ActionListener {
 

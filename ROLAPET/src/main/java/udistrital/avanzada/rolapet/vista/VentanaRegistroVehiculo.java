@@ -11,7 +11,7 @@ import java.awt.event.ItemEvent;
  * Los campos específicos se muestran u ocultan dinámicamente según el tipo seleccionado.
  * 
  * @author Sarita
- * @version 1.3
+ * @version 1.1, 25-09-2025
  */
 public class VentanaRegistroVehiculo extends JFrame {
     private JComboBox<String> comboTipoVehiculo;

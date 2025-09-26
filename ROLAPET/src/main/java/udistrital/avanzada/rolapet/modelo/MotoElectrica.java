@@ -1,12 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package udistrital.avanzada.rolapet.modelo;
 
 /**
- *
- * @author sarit
+ * Clase MotoElectrica que extiende Vehiculo.
+ * Representa una motocicleta eléctrica con características específicas adicionales
+ * como frenos de disco, suspensión de alta calidad, luces LED y alarma antirrobo.
+ * 
+ * @author Sarita
+ * @version 1.1, 25-09-2025
  */
 public class MotoElectrica extends Vehiculo {
     private boolean frenosDisco;
@@ -14,6 +14,20 @@ public class MotoElectrica extends Vehiculo {
     private boolean lucesLED;
     private boolean alarmaAntiRobo;
 
+    /**
+     * Constructor que crea una moto eléctrica con sus características específicas
+     * además de las propiedades comunes a todos los vehículos.
+     * 
+     * @param marca marca del vehículo
+     * @param modelo modelo del vehículo
+     * @param autonomiaKm autonomía en kilómetros
+     * @param potenciaNominalW potencia nominal en vatios
+     * @param velocidadMaxKmh velocidad máxima en km/h
+     * @param frenosDisco indica si tiene frenos de disco
+     * @param suspensionAltaCalidad indica si tiene suspensión de alta calidad
+     * @param lucesLED indica si cuenta con luces LED
+     * @param alarmaAntiRobo indica si tiene alarma anti robo
+     */
     public MotoElectrica(String marca, String modelo, double autonomiaKm, int potenciaNominalW, double velocidadMaxKmh,
                          boolean frenosDisco, boolean suspensionAltaCalidad, boolean lucesLED, boolean alarmaAntiRobo) {
         super(marca, modelo, autonomiaKm, potenciaNominalW, velocidadMaxKmh);
@@ -35,6 +49,12 @@ public class MotoElectrica extends Vehiculo {
     public boolean isAlarmaAntiRobo() { return alarmaAntiRobo; }
     public void setAlarmaAntiRobo(boolean alarmaAntiRobo) { this.alarmaAntiRobo = alarmaAntiRobo; }
 
+    /**
+     * Retorna la descripción completa del vehículo incluyendo las características propias
+     * de la moto eléctrica.
+     * 
+     * @return descripción detallada del vehículo
+     */
     @Override
     public String getDescripcion() {
         return super.getDescripcion() +

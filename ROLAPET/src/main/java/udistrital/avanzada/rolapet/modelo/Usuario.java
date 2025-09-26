@@ -7,7 +7,7 @@ package udistrital.avanzada.rolapet.modelo;
  * Esta clase debe ser extendida por tipos concretos de usuarios, como Cliente.
  * 
  * @author Sarita
- * @version 1.3
+ * @version 1.1, 25-09-2025
  */
 public abstract class Usuario extends Persona {
     private String nombreUsuario;

@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
  * Incluye una lista gráfica con los requisitos para la contraseña.
  * 
  * @author Sarita
- * @version 1.3
+ * @version 1.2, 25-09-2025
  */
 public class FormularioRegistroCliente extends JFrame {
     private JTextField txtNombre;

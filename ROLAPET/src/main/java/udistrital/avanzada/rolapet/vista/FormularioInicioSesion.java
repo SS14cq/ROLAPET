@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
  * La interfaz utiliza un diseño con colores y fuentes personalizados.
  * 
  * @author Sarita
- * @version 1.3
+ * @version 1.1, 25-09-2025
  */
 public class FormularioInicioSesion extends JFrame {
     private JTextField txtUsuario;
@@ -138,5 +138,4 @@ public class FormularioInicioSesion extends JFrame {
         btnIngresar.addActionListener(controlador);
         btnCancelar.addActionListener(controlador);
     }
-    
 }

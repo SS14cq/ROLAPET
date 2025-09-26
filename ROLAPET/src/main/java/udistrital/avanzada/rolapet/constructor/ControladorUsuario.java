@@ -11,7 +11,7 @@ import udistrital.avanzada.rolapet.modelo.Usuario;
  * así como buscar usuarios por nombre de usuario o cédula.
  * 
  * @author sarita
- * @version 1.3
+ * @version 1.3, 25-09-2025
  */
 public class ControladorUsuario {
 

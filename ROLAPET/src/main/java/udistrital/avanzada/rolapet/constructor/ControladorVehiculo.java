@@ -15,7 +15,7 @@ import java.util.List;
  * </p>
  * 
  * @author Sarita
- * @version 1.2
+ * @version 1.2, 25-09-2025
  */
 public class ControladorVehiculo {
     private List<Vehiculo> vehiculos;

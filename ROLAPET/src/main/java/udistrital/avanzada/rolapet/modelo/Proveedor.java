@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  *
- * @author sarit
+ * @author sarita
  */
 public abstract class Proveedor extends Persona {
     private List<Item> items;

@@ -19,7 +19,7 @@ import java.awt.event.ActionListener;
  * </p>
  * 
  * @author Sarita
- * @version 1.3
+ * @version 1.2, 25-09-2025
  */
 public class GestorRegistroVehiculo implements ActionListener {
     private VentanaRegistroVehiculo ventana;
