@@ -12,4 +12,12 @@
         <exec.mainClass>udistrital.avanzada.rolapet.main.Main</exec.mainClass>
     </properties>
     <name>ROLAPET</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.mongodb</groupId>
+      <artifactId>mongo-java-driver</artifactId>
+      <version>3.11.0</version>
+    </dependency>
+  </dependencies>
 </project>

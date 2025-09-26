@@ -4,11 +4,23 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+/**
+ * Clase VentanaInicio que representa la pantalla principal de inicio de la aplicación.
+ * Contiene botones para navegar a las secciones de Usuarios, Administradores y Proveedores.
+ * Presenta un diseño con colores personalizados, logo y título.
+ * 
+ * @author Sarita
+ * @version 1.3
+ */
 public class VentanaInicio extends JFrame {
     public JButton btnUsuarios = new JButton("Usuarios");
     public JButton btnAdministradores = new JButton("Administradores");
     public JButton btnProveedores = new JButton("Proveedores");
 
+    /**
+     * Constructor que inicializa la ventana con su diseño y componentes.
+     * Configura colores, fuentes, logo, título y el layout de los botones.
+     */
     public VentanaInicio() {
         Color fondo = Color.decode("#f5f5dc");
         Color encabezadoColor = Color.decode("#b81b2f");
@@ -69,6 +81,11 @@ public class VentanaInicio extends JFrame {
         setLocationRelativeTo(null);
     }
 
+    /**
+     * Asigna el mismo ActionListener controlador a los botones de la ventana.
+     * 
+     * @param controlador ActionListener que manejará los eventos de los botones
+     */
     public void setControlador(ActionListener controlador) {
         btnUsuarios.addActionListener(controlador);
         btnAdministradores.addActionListener(controlador);

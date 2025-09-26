@@ -4,11 +4,22 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+/**
+ * Clase VentanaUsuarios que representa la ventana con opciones para usuarios.
+ * Cuenta con botones para iniciar sesión, registrarse y regresar,
+ * y presenta un diseño con logo, título y colores personalizados.
+ * 
+ * @author Sarita
+ * @version 1.3
+ */
 public class VentanaUsuarios extends JFrame {
     public JButton btnIniciarSesion = new JButton("Iniciar sesión");
     public JButton btnRegistrarse = new JButton("Registrarse");
     public JButton btnAtras = new JButton("Atrás");
 
+    /**
+     * Constructor que inicializa la ventana con sus componentes, diseño y layout.
+     */
     public VentanaUsuarios() {
         Color fondo = Color.decode("#f5f5dc");
         Color encabezadoColor = Color.decode("#b81b2f");
@@ -66,6 +77,11 @@ public class VentanaUsuarios extends JFrame {
         setLocationRelativeTo(null);
     }
 
+    /**
+     * Asigna el mismo ActionListener controlador a los botones de la ventana.
+     * 
+     * @param controlador ActionListener que manejará los eventos de los botones
+     */
     public void setControlador(ActionListener controlador) {
         btnIniciarSesion.addActionListener(controlador);
         btnRegistrarse.addActionListener(controlador);

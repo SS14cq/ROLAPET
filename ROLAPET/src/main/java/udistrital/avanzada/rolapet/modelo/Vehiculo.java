@@ -1,13 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package udistrital.avanzada.rolapet.modelo;
+
 /**
  * Clase que representa un vehículo genérico.
  * Contiene los atributos básicos comunes a todos los vehículos eléctricos de baja potencia.
+ * Proporciona métodos para acceder y modificar estos atributos, así como una descripción del vehículo.
  * 
- * @author sarita
+ * @author Sarita
  * @version 1.1
  * @since 2025-09-25 
  */
@@ -18,6 +16,15 @@ public class Vehiculo {
     private int potenciaNominalW;        // potencia nominal en vatios
     private double velocidadMaxKmh;      // velocidad máxima en km/h
 
+    /**
+     * Constructor que inicializa un vehículo con los atributos especificados.
+     * 
+     * @param marca marca del vehículo
+     * @param modelo modelo del vehículo
+     * @param autonomiaKm autonomía en kilómetros
+     * @param potenciaNominalW potencia nominal en vatios
+     * @param velocidadMaxKmh velocidad máxima en km/h
+     */
     public Vehiculo(String marca, String modelo, double autonomiaKm, int potenciaNominalW, double velocidadMaxKmh) {
         this.marca = marca;
         this.modelo = modelo;
@@ -43,10 +50,13 @@ public class Vehiculo {
     public double getVelocidadMaxKmh() { return velocidadMaxKmh; }
     public void setVelocidadMaxKmh(double velocidadMaxKmh) { this.velocidadMaxKmh = velocidadMaxKmh; }
 
-    // Método representativo
+    /**
+     * Método que retorna una descripción completa del vehículo con sus características principales.
+     * 
+     * @return descripción formateada del vehículo
+     */
     public String getDescripcion() {
         return String.format("Marca: %s, Modelo: %s, Autonomía: %.1f km, Potencia: %d W, Velocidad máxima: %.1f km/h",
                 marca, modelo, autonomiaKm, potenciaNominalW, velocidadMaxKmh);
     }
 }
-

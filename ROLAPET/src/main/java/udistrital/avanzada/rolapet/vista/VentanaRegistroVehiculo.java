@@ -4,6 +4,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ItemEvent;
 
+/**
+ * Clase VentanaRegistroVehiculo que representa la ventana para registrar vehículos.
+ * Permite seleccionar el tipo de vehículo (Scooter o Motoeléctrica), ingresar atributos generales
+ * y específicos según el tipo seleccionado, y cuenta con botones para registrar o cancelar.
+ * Los campos específicos se muestran u ocultan dinámicamente según el tipo seleccionado.
+ * 
+ * @author Sarita
+ * @version 1.3
+ */
 public class VentanaRegistroVehiculo extends JFrame {
     private JComboBox<String> comboTipoVehiculo;
     private JTextField campoMarca, campoModelo, campoAutonomia, campoPotencia, campoVelocidad;
@@ -12,6 +21,10 @@ public class VentanaRegistroVehiculo extends JFrame {
 
     private JButton btnRegistrar, btnCancelar;
 
+    /**
+     * Constructor que inicializa la ventana y sus componentes con diseño personalizado
+     * y comportamiento dinámico para mostrar u ocultar campos específicos según el tipo de vehículo.
+     */
     public VentanaRegistroVehiculo() {
         super("Registro de Vehículo");
 
@@ -187,6 +200,11 @@ public class VentanaRegistroVehiculo extends JFrame {
         });
     }
 
+    /**
+     * Muestra u oculta los campos específicos según el tipo de vehículo seleccionado.
+     * 
+     * @param tipo Tipo de vehículo seleccionado ("Scooter" o "Motoeléctrica").
+     */
     private void mostrarCamposEspecificos(String tipo) {
         boolean esScooter = "Scooter".equals(tipo);
 
@@ -203,6 +221,7 @@ public class VentanaRegistroVehiculo extends JFrame {
     public String getTipoVehiculo() { return (String) comboTipoVehiculo.getSelectedItem(); }
     public String getMarca() { return campoMarca.getText().trim(); }
     public String getModelo() { return campoModelo.getText().trim(); }
+
     public double getAutonomia() {
         try { return Double.parseDouble(campoAutonomia.getText().trim()); }
         catch (NumberFormatException e) { return 0; }
@@ -215,6 +234,7 @@ public class VentanaRegistroVehiculo extends JFrame {
         try { return Double.parseDouble(campoVelocidad.getText().trim()); }
         catch (NumberFormatException e) { return 0; }
     }
+
     public boolean isLlantasOffRoad() { return chkLlantasOffRoad.isSelected(); }
     public boolean isIluminacionAvanzada() { return chkIluminacionAvanzada.isSelected(); }
     public boolean isFrenosDisco() { return chkFrenosDisco.isSelected(); }
@@ -225,19 +245,20 @@ public class VentanaRegistroVehiculo extends JFrame {
     public JButton getBtnRegistrar() { return btnRegistrar; }
     public JButton getBtnCancelar() { return btnCancelar; }
 
+    /**
+     * Limpia todos los campos y desmarca todos los checkboxes dejando el formulario vacío.
+     */
     public void limpiarCampos() {
-    campoMarca.setText("");
-    campoModelo.setText("");
-    campoAutonomia.setText("");
-    campoPotencia.setText("");
-    campoVelocidad.setText("");
-    chkLlantasOffRoad.setSelected(false);
-    chkIluminacionAvanzada.setSelected(false);
-    chkFrenosDisco.setSelected(false);
-    chkSuspensionAlta.setSelected(false);
-    chkLucesLED.setSelected(false);
-    chkAlarmaAntiRobo.setSelected(false);
+        campoMarca.setText("");
+        campoModelo.setText("");
+        campoAutonomia.setText("");
+        campoPotencia.setText("");
+        campoVelocidad.setText("");
+        chkLlantasOffRoad.setSelected(false);
+        chkIluminacionAvanzada.setSelected(false);
+        chkFrenosDisco.setSelected(false);
+        chkSuspensionAlta.setSelected(false);
+        chkLucesLED.setSelected(false);
+        chkAlarmaAntiRobo.setSelected(false);
+    }
 }
-
-}
-

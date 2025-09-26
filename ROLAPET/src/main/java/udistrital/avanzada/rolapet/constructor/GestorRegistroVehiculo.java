@@ -9,10 +9,29 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Clase GestorRegistroVehiculo que controla la lógica para registrar vehículos
+ * a través de una interfaz gráfica. Gestiona la interacción con la ventana de registro
+ * y usa un controlador para manejar la colección de vehículos.
+ * <p>
+ * Soporta el registro de vehículos tipo Scooter y Motoeléctrica, validando los campos
+ * necesarios y evitando duplicados.
+ * </p>
+ * 
+ * @author Sarita
+ * @version 1.3
+ */
 public class GestorRegistroVehiculo implements ActionListener {
     private VentanaRegistroVehiculo ventana;
     private ControladorVehiculo controladorVehiculo;  // Clase encargada de manejar la lista de vehículos
 
+    /**
+     * Constructor que inicializa la ventana y controlador,
+     * además configura los listeners para los botones de la ventana.
+     * 
+     * @param ventana instancia de la ventana de registro de vehículos
+     * @param controladorVehiculo instancia del controlador de vehículos
+     */
     public GestorRegistroVehiculo(VentanaRegistroVehiculo ventana, ControladorVehiculo controladorVehiculo) {
         this.ventana = ventana;
         this.controladorVehiculo = controladorVehiculo;
@@ -22,6 +41,12 @@ public class GestorRegistroVehiculo implements ActionListener {
         this.ventana.getBtnCancelar().addActionListener(this);
     }
 
+    /**
+     * Maneja los eventos de acción generados por los botones de registro y cancelación.
+     * Valida los datos ingresados, crea el vehículo correspondiente y lo registra si no está duplicado.
+     * 
+     * @param e evento de acción disparado
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();

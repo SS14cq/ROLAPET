@@ -1,33 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package udistrital.avanzada.rolapet.modelo;
 
 /**
- * Representa un usuario que extiende de Persona,
- * agregando los atributos de nombre de usuario y contraseña.
+ * Clase abstracta Usuario que extiende Persona.
+ * Representa un usuario del sistema que tiene credenciales para autenticación,
+ * incluyendo nombre de usuario y contraseña.
+ * Esta clase debe ser extendida por tipos concretos de usuarios, como Cliente.
  * 
- * Hereda nombre, apellido, cédula, correo y celular.
- * 
- * @author sarita
- * @version 1.0, 21-09-2025
+ * @author Sarita
+ * @version 1.3
  */
-public class Usuario extends Persona {
-    
+public abstract class Usuario extends Persona {
     private String nombreUsuario;
     private String contrasena;
-    
+
     /**
-     * Construye un usuario con toda la información personal y de acceso.
-     *
-     * @param nombreUsuario Nombre de usuario para el acceso.
-     * @param contrasena Contraseña para el acceso.
-     * @param nombre Nombre real.
-     * @param apellido Apellido real.
-     * @param cedula Documento de identidad.
-     * @param correo Correo electrónico.
-     * @param celular Número de celular.
+     * Constructor que crea un usuario con sus credenciales y datos personales.
+     * 
+     * @param nombreUsuario nombre de usuario para autenticación
+     * @param contrasena contraseña del usuario
+     * @param nombre nombre de la persona
+     * @param apellido apellido de la persona
+     * @param cedula número de cédula o identificación
+     * @param correo correo electrónico
+     * @param celular número de celular
      */
     public Usuario(String nombreUsuario, String contrasena, String nombre, String apellido, String cedula, String correo, String celular) {
         super(nombre, apellido, cedula, correo, celular);
@@ -36,24 +31,34 @@ public class Usuario extends Persona {
     }
 
     /**
-     * Getters y setters para nombre de usuario y contraseña.
-     * Los demás atributos se heredan de Persona.
+     * Devuelve el nombre de usuario.
+     * @return nombre de usuario
      */
     public String getNombreUsuario() {
         return nombreUsuario;
     }
 
+    /**
+     * Establece el nombre de usuario.
+     * @param nombreUsuario nombre de usuario a asignar
+     */
     public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
     }
 
+    /**
+     * Devuelve la contraseña del usuario.
+     * @return contraseña
+     */
     public String getContrasena() {
         return contrasena;
     }
 
+    /**
+     * Establece la contraseña del usuario.
+     * @param contrasena contraseña a asignar
+     */
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
-    
-    
 }

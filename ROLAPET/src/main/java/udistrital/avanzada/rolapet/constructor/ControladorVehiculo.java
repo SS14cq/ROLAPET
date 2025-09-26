@@ -5,19 +5,36 @@ import udistrital.avanzada.rolapet.modelo.Vehiculo;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase ControladorVehiculo que gestiona una colección de objetos Vehiculo.
+ * Permite registrar nuevos vehículos, buscar vehículos por marca y modelo,
+ * y obtener la lista completa de vehículos registrados.
+ * <p>
+ * Se asegura de no registrar vehículos duplicados basándose en la combinación
+ * de marca y modelo.
+ * </p>
+ * 
+ * @author Sarita
+ * @version 1.2
+ */
 public class ControladorVehiculo {
     private List<Vehiculo> vehiculos;
 
+    /**
+     * Construye un nuevo controlador inicializando la lista interna de vehículos.
+     */
     public ControladorVehiculo() {
         vehiculos = new ArrayList<>();
     }
 
     /**
      * Registra un vehículo si no existe ya en la lista.
-     * Se puede personalizar el criterio de igualdad, aquí se usa marca + modelo como ejemplo.
+     * El criterio de igualdad se basa en la combinación de marca y modelo,
+     * sin distinguir mayúsculas o minúsculas.
      * 
      * @param vehiculo vehículo a registrar
-     * @return true si se registró exitosamente, false si ya existe
+     * @return true si se registró exitosamente, false si ya existe un vehículo
+     *         con la misma marca y modelo
      */
     public boolean registrarVehiculo(Vehiculo vehiculo) {
         if (buscarVehiculo(vehiculo.getMarca(), vehiculo.getModelo()) != null) {
@@ -28,11 +45,12 @@ public class ControladorVehiculo {
     }
 
     /**
-     * Busca un vehículo por marca y modelo.
+     * Busca un vehículo por su marca y modelo.
+     * La búsqueda no distingue entre mayúsculas y minúsculas.
      * 
-     * @param marca marca del vehículo
-     * @param modelo modelo del vehículo
-     * @return Vehiculo encontrado o null si no existe
+     * @param marca  marca del vehículo a buscar
+     * @param modelo modelo del vehículo a buscar
+     * @return el Vehiculo encontrado o null si no existe ninguno con la marca y modelo indicados
      */
     public Vehiculo buscarVehiculo(String marca, String modelo) {
         for (Vehiculo v : vehiculos) {
@@ -44,9 +62,9 @@ public class ControladorVehiculo {
     }
 
     /**
-     * Obtiene la lista de vehículos registrados.
+     * Obtiene la lista completa de vehículos registrados en el controlador.
      * 
-     * @return lista de vehículos
+     * @return lista de vehículos registrados
      */
     public List<Vehiculo> obtenerVehiculos() {
         return vehiculos;
