@@ -1,18 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package udistrital.avanzada.rolapet.modelo;
 
-/**
- *
- * @author sarit
- */
-public class ProveedorInsumo extends Proveedor{
-    public ProveedorInsumo(String nombre, String apellido, String cedula, String correo, String celular){
+public class ProveedorInsumo extends Proveedor {
+
+    private String contrasena;
+
+    public ProveedorInsumo(String nombre, String apellido, String cedula,
+                           String correo, String celular, String contrasena) {
         super(nombre, apellido, cedula, correo, celular);
+        this.contrasena = contrasena;
     }
-    public String getTipoProveedor(){
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    @Override
+    public String getTipoProveedor() {
         return "Insumo";
-}
+    }
 }

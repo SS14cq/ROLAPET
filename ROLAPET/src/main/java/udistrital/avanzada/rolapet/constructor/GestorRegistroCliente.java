@@ -7,7 +7,6 @@ import udistrital.avanzada.rolapet.vista.VentanaUsuarios;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 /**
  * Clase GestorRegistroCliente que controla la lógica de registro de clientes
  * a partir de un formulario visual. Valida la contraseña y gestiona la comunicación

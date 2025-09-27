@@ -1,13 +1,14 @@
 package udistrital.avanzada.rolapet.modelo;
 
-import java.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Clase Proveedor que representa a un proveedor dentro del sistema.
  * Puede ser de tipo servicio o insumo, y contiene la información básica
  * de identificación y contacto.
  * 
- * @author Sarita
+ * @author Juan
  * @version 1.0, 25-09-2025
  */
 public class Proveedor {

@@ -133,5 +133,4 @@ public class FormularioInicioSesion extends JFrame {
         btnIngresar.addActionListener(controlador);
         btnCancelar.addActionListener(controlador);
     }
-    
 }
