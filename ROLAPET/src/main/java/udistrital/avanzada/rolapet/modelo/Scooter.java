@@ -24,9 +24,9 @@ public class Scooter extends Vehiculo {
      * @param llantasOffRoad indica si tiene llantas off-road
      * @param iluminacionAvanzada indica si cuenta con iluminación avanzada
      */
-    public Scooter(String marca, String modelo, double autonomiaKm, int potenciaNominalW, double velocidadMaxKmh,
+    public Scooter(String marca, String modelo, String placa, double autonomiaKm, int potenciaNominalW, double velocidadMaxKmh,
                    boolean llantasOffRoad, boolean iluminacionAvanzada) {
-        super(marca, modelo, autonomiaKm, potenciaNominalW, velocidadMaxKmh);
+        super(marca, modelo, placa, autonomiaKm, potenciaNominalW, velocidadMaxKmh);
         this.llantasOffRoad = llantasOffRoad;
         this.iluminacionAvanzada = iluminacionAvanzada;
     }

@@ -26,6 +26,17 @@ public class ControladorUsuario {
      */
     public ControladorUsuario() {
         usuarios = new ArrayList<>();
+        // Usuario Sofia Castro
+        Usuario sofia = new Usuario(
+            "Sofia", // nombreUsuario
+            "Sofia14@", // contraseña
+            "Sofia", // nombre
+            "Castro", // apellido
+            "1011201454", // cedula
+            "sscastroq@udistrital.edu.co", // correo
+            "3177177162" // celular
+        ) {};
+        usuarios.add(sofia);
     }
 
     /**

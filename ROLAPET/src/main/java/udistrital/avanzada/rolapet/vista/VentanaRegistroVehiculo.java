@@ -14,8 +14,9 @@ import java.awt.event.ItemEvent;
  * @version 1.1, 25-09-2025
  */
 public class VentanaRegistroVehiculo extends JFrame {
+    private JFrame owner;
     private JComboBox<String> comboTipoVehiculo;
-    private JTextField campoMarca, campoModelo, campoAutonomia, campoPotencia, campoVelocidad;
+    private JTextField campoMarca, campoModelo, campoPlaca, campoAutonomia, campoPotencia, campoVelocidad;
     private JCheckBox chkLlantasOffRoad, chkIluminacionAvanzada;
     private JCheckBox chkFrenosDisco, chkSuspensionAlta, chkLucesLED, chkAlarmaAntiRobo;
 
@@ -26,7 +27,12 @@ public class VentanaRegistroVehiculo extends JFrame {
      * y comportamiento dinámico para mostrar u ocultar campos específicos según el tipo de vehículo.
      */
     public VentanaRegistroVehiculo() {
+        this(null);
+    }
+
+    public VentanaRegistroVehiculo(JFrame owner) {
         super("Registro de Vehículo");
+        this.owner = owner;
 
         Color fondo = Color.decode("#f5f5dc");
         Color encabezadoColor = Color.decode("#b81b2f");
@@ -74,15 +80,26 @@ public class VentanaRegistroVehiculo extends JFrame {
         gbc.gridx = 1;
         panelFormulario.add(comboTipoVehiculo, gbc);
 
-        // Marca
-        gbc.gridy++;
-        gbc.gridx = 0;
-        JLabel lblMarca = new JLabel("Marca:");
-        lblMarca.setFont(fuenteLabels);
-        panelFormulario.add(lblMarca, gbc);
-        gbc.gridx = 1;
-        campoMarca = new JTextField(20);
-        panelFormulario.add(campoMarca, gbc);
+
+    // Placa
+    gbc.gridy++;
+    gbc.gridx = 0;
+    JLabel lblPlaca = new JLabel("Placa:");
+    lblPlaca.setFont(fuenteLabels);
+    panelFormulario.add(lblPlaca, gbc);
+    gbc.gridx = 1;
+    campoPlaca = new JTextField(20);
+    panelFormulario.add(campoPlaca, gbc);
+
+    // Marca
+    gbc.gridy++;
+    gbc.gridx = 0;
+    JLabel lblMarca = new JLabel("Marca:");
+    lblMarca.setFont(fuenteLabels);
+    panelFormulario.add(lblMarca, gbc);
+    gbc.gridx = 1;
+    campoMarca = new JTextField(20);
+    panelFormulario.add(campoMarca, gbc);
 
         // Modelo
         gbc.gridy++;
@@ -218,7 +235,11 @@ public class VentanaRegistroVehiculo extends JFrame {
     }
 
     // Getters públicos para obtener datos
+    public JFrame getOwnerWindow() {
+        return owner;
+    }
     public String getTipoVehiculo() { return (String) comboTipoVehiculo.getSelectedItem(); }
+    public String getPlaca() { return campoPlaca.getText().trim(); }
     public String getMarca() { return campoMarca.getText().trim(); }
     public String getModelo() { return campoModelo.getText().trim(); }
 
@@ -249,6 +270,7 @@ public class VentanaRegistroVehiculo extends JFrame {
      * Limpia todos los campos y desmarca todos los checkboxes dejando el formulario vacío.
      */
     public void limpiarCampos() {
+        campoPlaca.setText("");
         campoMarca.setText("");
         campoModelo.setText("");
         campoAutonomia.setText("");

@@ -15,11 +15,19 @@ public class GestorInicioSesionAdministrador implements ActionListener {
 
     private FormularioInicioSesionAdministrador vista;
     private GestorRegistroProveedor gestorProveedor;
+    private udistrital.avanzada.rolapet.modelo.RepositorioPublicaciones repoPublicaciones;
 
     public GestorInicioSesionAdministrador(FormularioInicioSesionAdministrador vista,
                                            GestorRegistroProveedor gestorProveedor) {
+        this(vista, gestorProveedor, new udistrital.avanzada.rolapet.modelo.RepositorioPublicaciones());
+    }
+
+    public GestorInicioSesionAdministrador(FormularioInicioSesionAdministrador vista,
+                                           GestorRegistroProveedor gestorProveedor,
+                                           udistrital.avanzada.rolapet.modelo.RepositorioPublicaciones repoPublicaciones) {
         this.vista = vista;
         this.gestorProveedor = gestorProveedor;
+        this.repoPublicaciones = repoPublicaciones;
         this.vista.setControlador(this);
     }
 
@@ -31,16 +39,14 @@ public class GestorInicioSesionAdministrador implements ActionListener {
             String usuario = vista.getUsuario();
             String contrasena = vista.getContrasena();
 
-            if (usuario.equals("administrador") && contrasena.equals("12345678")) {
-                JOptionPane.showMessageDialog(vista,
-                        " Bienvenido Administrador",
-                        "Login exitoso", JOptionPane.INFORMATION_MESSAGE);
+        if (usuario.equals("administrador") && contrasena.equals("12345678")) {
+        JOptionPane.showMessageDialog(vista,
+            " Bienvenido Administrador",
+            "Login exitoso", JOptionPane.INFORMATION_MESSAGE);
 
-                // Abrir ventana para seleccionar tipo de proveedor
-                VentanaSeleccionRegistroProveedor seleccion = new VentanaSeleccionRegistroProveedor();
-                new GestorSeleccionRegistroProveedor(seleccion, gestorProveedor); 
-                seleccion.setVisible(true);
-                vista.dispose();
+        // Abrir panel de administrador con botón para crear publicación
+        new GestorVentanaAdministrador(repoPublicaciones);
+        vista.dispose();
             } else {
                 JOptionPane.showMessageDialog(vista,
                         " Usuario o contraseña inválidos.",

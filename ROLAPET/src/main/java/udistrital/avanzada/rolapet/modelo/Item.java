@@ -13,7 +13,6 @@ public class Item {
         this.precio = precio;
     }
 
-    // --- Getters ---
     public String getId() {
         return id;
     }
@@ -35,4 +34,3 @@ public class Item {
         return titulo + " - " + descripcion + " ($" + precio + ")";
     }
 }
-

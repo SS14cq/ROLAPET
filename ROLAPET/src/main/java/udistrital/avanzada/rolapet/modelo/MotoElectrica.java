@@ -28,9 +28,9 @@ public class MotoElectrica extends Vehiculo {
      * @param lucesLED indica si cuenta con luces LED
      * @param alarmaAntiRobo indica si tiene alarma anti robo
      */
-    public MotoElectrica(String marca, String modelo, double autonomiaKm, int potenciaNominalW, double velocidadMaxKmh,
+    public MotoElectrica(String marca, String modelo, String placa, double autonomiaKm, int potenciaNominalW, double velocidadMaxKmh,
                          boolean frenosDisco, boolean suspensionAltaCalidad, boolean lucesLED, boolean alarmaAntiRobo) {
-        super(marca, modelo, autonomiaKm, potenciaNominalW, velocidadMaxKmh);
+        super(marca, modelo, placa, autonomiaKm, potenciaNominalW, velocidadMaxKmh);
         this.frenosDisco = frenosDisco;
         this.suspensionAltaCalidad = suspensionAltaCalidad;
         this.lucesLED = lucesLED;

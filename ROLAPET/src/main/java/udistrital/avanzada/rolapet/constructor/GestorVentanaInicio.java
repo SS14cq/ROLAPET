@@ -35,7 +35,8 @@ public class GestorVentanaInicio implements ActionListener {
     private ControladorUsuario controladorUsuario;
 
     /** Instancia compartida de registro de proveedores */
-    private static GestorRegistroProveedor gestorProveedores = new GestorRegistroProveedor();
+    public static GestorRegistroProveedor gestorProveedores = null;
+    // Usar la lista de proveedores real del gestor
     /**
      * Constructor que inicializa el gestor con la ventana de inicio y el controlador de usuarios.
      * 
@@ -45,6 +46,9 @@ public class GestorVentanaInicio implements ActionListener {
     public GestorVentanaInicio(VentanaInicio ventanaInicio, ControladorUsuario controladorUsuario) {
         this.ventanaInicio = ventanaInicio;
         this.controladorUsuario = controladorUsuario;
+        if (gestorProveedores == null) {
+            gestorProveedores = new GestorRegistroProveedor();
+        }
         this.ventanaInicio.setControlador(this);
     }
 /**
@@ -72,7 +76,7 @@ public class GestorVentanaInicio implements ActionListener {
             VentanaUsuarios ventanaUsuarios = new VentanaUsuarios();
             new GestorVentanaUsuarios(ventanaUsuarios, ventanaInicio, controladorUsuario);
             ventanaUsuarios.setVisible(true);
-            ventanaInicio.dispose();
+            ventanaInicio.setVisible(false);
 
         // Proveedores
         } else if (source == ventanaInicio.btnProveedores) {
@@ -85,14 +89,14 @@ public class GestorVentanaInicio implements ActionListener {
             VentanaSeleccionTipoProveedor seleccion = new VentanaSeleccionTipoProveedor();
             new GestorSeleccionTipoProveedor(seleccion, gestorProveedores);
             seleccion.setVisible(true);
-            ventanaInicio.dispose();
+            ventanaInicio.setVisible(false);
 
         // Administradores
         } else if (source == ventanaInicio.btnAdministradores) {
             FormularioInicioSesionAdministrador loginAdmin = new FormularioInicioSesionAdministrador();
             new GestorInicioSesionAdministrador(loginAdmin, gestorProveedores);
             loginAdmin.setVisible(true);
-            ventanaInicio.dispose();
+            ventanaInicio.setVisible(false);
 
         // Acción no reconocida
         } else {

@@ -11,6 +11,7 @@ package udistrital.avanzada.rolapet.modelo;
 public class Vehiculo {
     private String marca;
     private String modelo;
+    private String placa;                // placa del vehículo
     private double autonomiaKm;          // autonomía en kilómetros
     private int potenciaNominalW;        // potencia nominal en vatios
     private double velocidadMaxKmh;      // velocidad máxima en km/h
@@ -24,9 +25,10 @@ public class Vehiculo {
      * @param potenciaNominalW potencia nominal en vatios
      * @param velocidadMaxKmh velocidad máxima en km/h
      */
-    public Vehiculo(String marca, String modelo, double autonomiaKm, int potenciaNominalW, double velocidadMaxKmh) {
+    public Vehiculo(String marca, String modelo, String placa, double autonomiaKm, int potenciaNominalW, double velocidadMaxKmh) {
         this.marca = marca;
         this.modelo = modelo;
+        this.placa = placa;
         this.autonomiaKm = autonomiaKm;
         this.potenciaNominalW = potenciaNominalW;
         this.velocidadMaxKmh = velocidadMaxKmh;
@@ -39,6 +41,9 @@ public class Vehiculo {
 
     public String getModelo() { return modelo; }
     public void setModelo(String modelo) { this.modelo = modelo; }
+
+    public String getPlaca() { return placa; }
+    public void setPlaca(String placa) { this.placa = placa; }
 
     public double getAutonomiaKm() { return autonomiaKm; }
     public void setAutonomiaKm(double autonomiaKm) { this.autonomiaKm = autonomiaKm; }
@@ -55,7 +60,7 @@ public class Vehiculo {
      * @return descripción formateada del vehículo
      */
     public String getDescripcion() {
-        return String.format("Marca: %s, Modelo: %s, Autonomía: %.1f km, Potencia: %d W, Velocidad máxima: %.1f km/h",
-                marca, modelo, autonomiaKm, potenciaNominalW, velocidadMaxKmh);
+        return String.format("Marca: %s, Modelo: %s, Placa: %s, Autonomía: %.1f km, Potencia: %d W, Velocidad máxima: %.1f km/h",
+                marca, modelo, placa, autonomiaKm, potenciaNominalW, velocidadMaxKmh);
     }
 }

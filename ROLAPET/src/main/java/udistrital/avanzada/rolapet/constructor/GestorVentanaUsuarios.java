@@ -4,6 +4,7 @@ import udistrital.avanzada.rolapet.vista.*;
 import udistrital.avanzada.rolapet.modelo.Usuario;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -13,38 +14,15 @@ import java.awt.event.ActionListener;
  * Controla la navegación entre formularios de inicio de sesión, registro y la ventana principal.
  * 
  * @author Sarita
- * @version 1.3, 25-09-2025
+ * @version 1.4, 27-09-2025
  */
 public class GestorVentanaUsuarios implements ActionListener {
 
-    /**
-     * Ventana principal que muestra las opciones para usuarios.
-     */
     private VentanaUsuarios ventanaUsuarios;
-
-    /**
-     * Ventana inicial de la aplicación.
-     */
     private VentanaInicio ventanaInicio;
-
-    /**
-     * Controlador responsable de la gestión de usuarios.
-     */
     private ControladorUsuario controladorUsuario;
-
-    /**
-     * Formulario de inicio de sesión que puede estar activo.
-     */
     private FormularioInicioSesion formularioInicioSesion;
 
-    /**
-     * Constructor de GestorVentanaUsuarios.
-     * Inicializa las ventanas y el controlador, y registra al gestor como controlador de eventos para la ventana de usuarios.
-     * 
-     * @param ventanaUsuarios La ventana que muestra opciones relacionadas con usuarios (iniciar sesión, registrarse).
-     * @param ventanaInicio La ventana inicial de la aplicación.
-     * @param controladorUsuario Controlador para manejar la lógica de usuarios (búsqueda, validación).
-     */
     public GestorVentanaUsuarios(VentanaUsuarios ventanaUsuarios, VentanaInicio ventanaInicio, ControladorUsuario controladorUsuario) {
         this.ventanaUsuarios = ventanaUsuarios;
         this.ventanaInicio = ventanaInicio;
@@ -53,25 +31,39 @@ public class GestorVentanaUsuarios implements ActionListener {
         this.ventanaUsuarios.setControlador(this);
     }
 
-    /**
-     * Método que maneja los eventos de acción generados por botones en las ventanas de usuarios.
-     * Define la reacción para los botones de iniciar sesión, registrarse, cancelar, e ir hacia atrás.
-     * 
-     * @param e Evento de acción generado por el usuario.
-     */
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
 
+        // --- Cerrar sesión: cualquier ventana que tenga este botón ---
+        if (source instanceof JButton && ((JButton) source).getText().equals("Cerrar sesión")) {
+            JButton btn = (JButton) source;
+            Window win = SwingUtilities.getWindowAncestor(btn);
+            if (win != null) {
+                win.dispose();              // Cierra la ventana actual
+            }
+            ventanaInicio.setVisible(true); // Muestra la ventana de inicio
+            return;
+        }
+
+        // --- Botón "Atrás" de formulario de inicio de sesión ---
+        if (formularioInicioSesion != null && source == formularioInicioSesion.getBtnAtras()) {
+            formularioInicioSesion.dispose();
+            ventanaUsuarios.setVisible(true);
+            return;
+        }
+
+        // --- Botón "Iniciar sesión" de ventanaUsuarios ---
         if (source == ventanaUsuarios.btnIniciarSesion) {
-            // Mostrar formulario de inicio de sesión y ocultar ventana de usuarios
             formularioInicioSesion = new FormularioInicioSesion();
             formularioInicioSesion.setControlador(this);
             formularioInicioSesion.setVisible(true);
             ventanaUsuarios.setVisible(false);
+            return;
+        }
 
-        } else if (formularioInicioSesion != null && source == formularioInicioSesion.getBtnIngresar()) {
-            // Proceso de autenticación de usuario
+        // --- Botón "Ingresar" de formulario de inicio de sesión ---
+        if (formularioInicioSesion != null && source == formularioInicioSesion.getBtnIngresar()) {
             String usuario = formularioInicioSesion.getUsuario();
             String contrasena = formularioInicioSesion.getContrasena();
 
@@ -82,29 +74,34 @@ public class GestorVentanaUsuarios implements ActionListener {
                 ventanaUsuarios.dispose();
                 ventanaInicio.dispose();
 
-                // Abrir ventana de registro de vehículo para usuario autenticado
                 VentanaRegistroVehiculo ventanaRegistro = new VentanaRegistroVehiculo();
                 ControladorVehiculo controladorVehiculo = new ControladorVehiculo();
-                GestorRegistroVehiculo gestorRegistro = new GestorRegistroVehiculo(ventanaRegistro, controladorVehiculo);
+                new GestorRegistroVehiculo(ventanaRegistro, controladorVehiculo);
 
             } else {
                 JOptionPane.showMessageDialog(formularioInicioSesion, "Usuario o contraseña incorrectos");
             }
+            return;
+        }
 
-        } else if (formularioInicioSesion != null && source == formularioInicioSesion.getBtnCancelar()) {
-            // Cancelar inicio de sesión, cerrar el formulario y mostrar ventana de usuarios
+        // --- Botón "Cancelar" del formulario de inicio de sesión ---
+        if (formularioInicioSesion != null && source == formularioInicioSesion.getBtnCancelar()) {
             formularioInicioSesion.dispose();
             ventanaUsuarios.setVisible(true);
+            return;
+        }
 
-        } else if (source == ventanaUsuarios.btnRegistrarse) {
-            // Mostrar formulario de registro de cliente y ocultar ventana de usuarios
+        // --- Botón "Registrarse" de ventanaUsuarios ---
+        if (source == ventanaUsuarios.btnRegistrarse) {
             FormularioRegistroCliente formularioRegistroCliente = new FormularioRegistroCliente();
-            GestorRegistroCliente gestorRegistroCliente = new GestorRegistroCliente(formularioRegistroCliente, ventanaUsuarios, controladorUsuario);
+            new GestorRegistroCliente(formularioRegistroCliente, ventanaUsuarios, controladorUsuario);
             formularioRegistroCliente.setVisible(true);
             ventanaUsuarios.setVisible(false);
+            return;
+        }
 
-        } else if (source == ventanaUsuarios.btnAtras) {
-            // Volver a la ventana inicial cerrando la ventana de usuarios
+        // --- Botón "Atrás" de ventanaUsuarios ---
+        if (source == ventanaUsuarios.btnAtras) {
             ventanaUsuarios.dispose();
             ventanaInicio.setVisible(true);
         }

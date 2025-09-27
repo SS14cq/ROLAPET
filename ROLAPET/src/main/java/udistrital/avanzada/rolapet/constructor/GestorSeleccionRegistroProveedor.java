@@ -24,16 +24,16 @@ public class GestorSeleccionRegistroProveedor implements ActionListener {
         Object source = e.getSource();
 
         if (source == vista.getBtnRegistrarInsumos()) {
-            FormularioRegistroProveedorInsumos registroInsumos = new FormularioRegistroProveedorInsumos();
+            FormularioRegistroProveedorInsumos registroInsumos = new FormularioRegistroProveedorInsumos(vista);
             new GestorRegistroProveedorInsumos(registroInsumos, gestorProveedor);
             registroInsumos.setVisible(true);
-            vista.dispose();
+            vista.setVisible(false);
 
         } else if (source == vista.getBtnRegistrarServicios()) {
-            FormularioRegistroProveedorServicios registroServicios = new FormularioRegistroProveedorServicios();
+            FormularioRegistroProveedorServicios registroServicios = new FormularioRegistroProveedorServicios(vista);
             new GestorRegistroProveedorServicios(registroServicios, gestorProveedor);
             registroServicios.setVisible(true);
-            vista.dispose();
+            vista.setVisible(false);
         }
     }
 }

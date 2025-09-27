@@ -3,115 +3,38 @@ package udistrital.avanzada.rolapet.modelo;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Clase Proveedor que representa a un proveedor dentro del sistema.
- * Puede ser de tipo servicio o insumo, y contiene la información básica
- * de identificación y contacto.
- * 
- * @author Juan
- * @version 1.0, 25-09-2025
- */
-public class Proveedor {
+public class Proveedor extends Usuario {
+    private String tipoProveedor;
 
-    private String nombre;
-    private String apellido;
-    private String cedula;
-    private String correo;
-    private String celular;
-    private TipoProveedor tipo;
+    private List<Publicacion> publicaciones;
+    private List<Item> items;
 
-    /**
-     * Enumeración que define los tipos de proveedor.
-     */
-    public enum TipoProveedor {
-        SERVICIO,
-        INSUMO
+    public Proveedor(String nombreUsuario, String contrasena, String tipoProveedor,
+                     String nombre, String apellido, String cedula,
+                     String correo, String celular) {
+        super(nombreUsuario, contrasena, nombre, apellido, cedula, correo, celular);
+        this.tipoProveedor = tipoProveedor;
+        this.publicaciones = new ArrayList<>();
+        this.items = new ArrayList<>();
     }
 
-    /**
-     * Constructor para crear un proveedor con todos los datos.
-     * 
-     * @param nombre nombre del proveedor
-     * @param apellido apellido del proveedor
-     * @param cedula cédula única del proveedor
-     * @param correo correo electrónico del proveedor
-     * @param celular número de celular del proveedor
-     * @param tipo tipo de proveedor (servicio o insumo)
-     */
-    public Proveedor(String nombre, String apellido, String cedula,
-                     String correo, String celular, TipoProveedor tipo) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.cedula = cedula;
-        this.correo = correo;
-        this.celular = celular;
-        this.tipo = tipo;
+    public String getTipoProveedor() {
+        return tipoProveedor;
     }
 
-    // --- Getters y Setters ---
-    public String getNombre() {
-        return nombre;
+    public List<Publicacion> getPublicaciones() {
+        return publicaciones;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public List<Item> getItems() {
+        return items;
     }
 
-    public String getApellido() {
-        return apellido;
+    public void agregarPublicacion(Publicacion publicacion) {
+        publicaciones.add(publicacion);
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public String getCedula() {
-        return cedula;
-    }
-
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
-    }
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
-
-    public String getCelular() {
-        return celular;
-    }
-
-    public void setCelular(String celular) {
-        this.celular = celular;
-    }
-
-    public TipoProveedor getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(TipoProveedor tipo) {
-        this.tipo = tipo;
-    }
-
-    @Override
-    public String toString() {
-        return nombre + " " + apellido + " (" + tipo + ")";
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Proveedor)) return false;
-        Proveedor that = (Proveedor) o;
-        return Objects.equals(cedula, that.cedula);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(cedula);
+    public void agregarItem(Item item) {
+        items.add(item);
     }
 }

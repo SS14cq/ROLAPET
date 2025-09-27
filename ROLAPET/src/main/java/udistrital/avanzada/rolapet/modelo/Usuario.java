@@ -9,9 +9,47 @@ package udistrital.avanzada.rolapet.modelo;
  * @author Sarita
  * @version 1.1, 25-09-2025
  */
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Usuario extends Persona {
+    private List<Vehiculo> vehiculos = new ArrayList<>();
+
+    /**
+     * Devuelve la lista de vehículos registrados por el usuario.
+     */
+    public List<Vehiculo> getVehiculos() {
+        return vehiculos;
+    }
+
+    /**
+     * Agrega un vehículo al usuario.
+     */
+    public void agregarVehiculo(Vehiculo vehiculo) {
+        if (vehiculo != null && !vehiculos.contains(vehiculo)) {
+            vehiculos.add(vehiculo);
+        }
+    }
     private String nombreUsuario;
     private String contrasena;
+    private List<Usuario> amigos = new ArrayList<>();
+    /**
+     * Devuelve la lista de amigos del usuario.
+     */
+    public List<Usuario> getAmigos() {
+        return amigos;
+    }
+
+    /**
+     * Agrega un amigo al usuario si no está ya en la lista.
+     */
+    public boolean agregarAmigo(Usuario amigo) {
+        if (amigo != null && !amigos.contains(amigo) && !amigo.equals(this)) {
+            amigos.add(amigo);
+            return true;
+        }
+        return false;
+    }
 
     /**
      * Constructor que crea un usuario con sus credenciales y datos personales.

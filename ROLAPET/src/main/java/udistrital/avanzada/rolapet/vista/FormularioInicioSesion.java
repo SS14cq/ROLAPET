@@ -14,10 +14,14 @@ import java.awt.event.ActionListener;
  * @version 1.1, 25-09-2025
  */
 public class FormularioInicioSesion extends JFrame {
+    // Si el botón 'Atrás' no existe, devolver null para compatibilidad con el controlador
+    public JButton getBtnAtras() {
+        return null;
+    }
     private JTextField txtUsuario;
     private JPasswordField txtContrasena;
     private JButton btnIngresar;
-    private JButton btnCancelar;
+    protected JButton btnCancelar;
 
     /**
      * Constructor que inicializa la ventana con sus componentes,
@@ -82,12 +86,19 @@ public class FormularioInicioSesion extends JFrame {
         btnCancelar.setFont(new Font("Segoe UI", Font.BOLD, 14));
 
         JPanel panelBotones = new JPanel();
+        panelBotones.setBackground(fondo);
+        btnIngresar.setBackground(encabezadoColor);
+        btnIngresar.setForeground(Color.WHITE);
+        btnIngresar.setOpaque(true);
+        btnCancelar.setBackground(grisAtras);
+        btnCancelar.setForeground(Color.WHITE);
+        btnCancelar.setOpaque(true);
         panelBotones.add(btnIngresar);
+        panelBotones.add(Box.createHorizontalStrut(10));
         panelBotones.add(btnCancelar);
 
         add(panelFormulario, BorderLayout.CENTER);
         add(panelBotones, BorderLayout.SOUTH);
-
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         pack();
         setLocationRelativeTo(null);
@@ -110,7 +121,10 @@ public class FormularioInicioSesion extends JFrame {
     }
 
     /**
-     * Retorna el botón para ingresar, para agregar listeners de eventos.
+            btnCancelar.addActionListener(e -> {
+                this.dispose();
+            });
+            btnCancelar.addActionListener(controlador);
      * @return botón ingresar
      */
     public JButton getBtnIngresar() {
@@ -131,6 +145,9 @@ public class FormularioInicioSesion extends JFrame {
      */
     public void setControlador(ActionListener controlador) {
         btnIngresar.addActionListener(controlador);
+        btnCancelar.addActionListener(e -> {
+            this.dispose();
+        });
         btnCancelar.addActionListener(controlador);
     }
 }

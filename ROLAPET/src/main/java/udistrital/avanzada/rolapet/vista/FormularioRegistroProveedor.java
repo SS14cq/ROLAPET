@@ -1,90 +1,85 @@
 package udistrital.avanzada.rolapet.vista;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionListener;
 
 public class FormularioRegistroProveedor extends JFrame {
 
-    private JTextField txtNombre;
-    private JTextField txtApellido;
-    private JTextField txtCedula;
-    private JTextField txtCorreo;
-    private JTextField txtCelular;
-    private JPasswordField txtContrasena;
-    private JButton btnRegistrar;
-    private JButton btnCancelar;
+	protected JTextField txtNombre;
+	protected JTextField txtApellido;
+	protected JTextField txtCedula;
+	protected JTextField txtCorreo;
+	protected JTextField txtCelular;
+	protected JPasswordField txtContrasena;
+	protected JButton btnRegistrar;
+	protected JButton btnCancelar;
 
-    public FormularioRegistroProveedor() {
-        setTitle("Registro de Proveedor");
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setSize(400, 400);
-        setLocationRelativeTo(null);
-        setLayout(new BorderLayout(10, 10));
+	public FormularioRegistroProveedor() {
+		// Inicialización de componentes
+		txtNombre = new JTextField(20);
+		txtApellido = new JTextField(20);
+		txtCedula = new JTextField(20);
+		txtCorreo = new JTextField(20);
+		txtCelular = new JTextField(20);
+		txtContrasena = new JPasswordField(20);
 
-        Color fondo = Color.decode("#f5f5dc");
-        Color encabezadoColor = Color.decode("#b81b2f");
+		btnRegistrar = new JButton("Registrar");
+		btnCancelar = new JButton("Cancelar");
 
-        JLabel lblTitulo = new JLabel("Formulario de Registro", SwingConstants.CENTER);
-        lblTitulo.setFont(new Font("Segoe UI", Font.BOLD, 20));
-        lblTitulo.setForeground(encabezadoColor);
+		// Diseño simple con BoxLayout vertical
+		setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
+		add(new JLabel("Nombre"));
+		add(txtNombre);
+		add(new JLabel("Apellido"));
+		add(txtApellido);
+		add(new JLabel("Cédula"));
+		add(txtCedula);
+		add(new JLabel("Correo (será su usuario)"));
+		add(txtCorreo);
+		add(new JLabel("Celular"));
+		add(txtCelular);
+		add(new JLabel("Contraseña"));
+		add(txtContrasena);
+		add(btnRegistrar);
+		add(btnCancelar);
 
-        JPanel panelTitulo = new JPanel(new BorderLayout());
-        panelTitulo.setBackground(fondo);
-        panelTitulo.add(lblTitulo, BorderLayout.CENTER);
-        add(panelTitulo, BorderLayout.NORTH);
+		pack();
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	}
 
-        JPanel panelFormulario = new JPanel(new GridLayout(6, 2, 10, 10));
-        panelFormulario.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
-        panelFormulario.setBackground(fondo);
+	public String getNombre() {
+		return txtNombre.getText().trim();
+	}
 
-        panelFormulario.add(new JLabel("Nombre:"));
-        txtNombre = new JTextField();
-        panelFormulario.add(txtNombre);
+	public String getApellido() {
+		return txtApellido.getText().trim();
+	}
 
-        panelFormulario.add(new JLabel("Apellido:"));
-        txtApellido = new JTextField();
-        panelFormulario.add(txtApellido);
+	public String getCedula() {
+		return txtCedula.getText().trim();
+	}
 
-        panelFormulario.add(new JLabel("Cédula:"));
-        txtCedula = new JTextField();
-        panelFormulario.add(txtCedula);
+	public String getCorreo() {
+		return txtCorreo.getText().trim();
+	}
 
-        panelFormulario.add(new JLabel("Correo:"));
-        txtCorreo = new JTextField();
-        panelFormulario.add(txtCorreo);
+	public String getCelular() {
+		return txtCelular.getText().trim();
+	}
 
-        panelFormulario.add(new JLabel("Celular:"));
-        txtCelular = new JTextField();
-        panelFormulario.add(txtCelular);
+	public String getContrasena() {
+		return new String(txtContrasena.getPassword());
+	}
 
-        panelFormulario.add(new JLabel("Contraseña:"));
-        txtContrasena = new JPasswordField();
-        panelFormulario.add(txtContrasena);
+	public JButton getBtnRegistrar() {
+		return btnRegistrar;
+	}
 
-        add(panelFormulario, BorderLayout.CENTER);
+	public JButton getBtnCancelar() {
+		return btnCancelar;
+	}
 
-        JPanel panelBotones = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 10));
-        btnRegistrar = new JButton("Registrar");
-        btnCancelar = new JButton("Cancelar");
-        panelBotones.add(btnRegistrar);
-        panelBotones.add(btnCancelar);
-
-        add(panelBotones, BorderLayout.SOUTH);
-    }
-
-    public String getNombre() { return txtNombre.getText().trim(); }
-    public String getApellido() { return txtApellido.getText().trim(); }
-    public String getCedula() { return txtCedula.getText().trim(); }
-    public String getCorreo() { return txtCorreo.getText().trim(); }
-    public String getCelular() { return txtCelular.getText().trim(); }
-    public String getContrasena() { return new String(txtContrasena.getPassword()).trim(); }
-
-    public JButton getBtnRegistrar() { return btnRegistrar; }
-    public JButton getBtnCancelar() { return btnCancelar; }
-
-    public void setControlador(ActionListener controlador) {
-        btnRegistrar.addActionListener(controlador);
-        btnCancelar.addActionListener(controlador);
-    }
+	public void setControlador(java.awt.event.ActionListener controlador) {
+		btnRegistrar.addActionListener(controlador);
+		btnCancelar.addActionListener(controlador);
+	}
 }
