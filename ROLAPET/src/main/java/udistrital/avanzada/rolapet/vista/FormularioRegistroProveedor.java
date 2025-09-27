@@ -1,83 +1,90 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package udistrital.avanzada.rolapet.vista;
-
-import udistrital.avanzada.rolapet.constructor.GestorRegistroProveedor;
-import udistrital.avanzada.rolapet.modelo.Proveedor;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
-/**
- * Formulario de inicio de sesión para Proveedores.
- * Extiende GestorRegistroCliente pero utiliza GestorRegistroProveedor para la lógica.
- */
 public class FormularioRegistroProveedor extends JFrame {
 
-    private JTextField campoCorreo;
-    private JPasswordField campoContrasena;
-    private JComboBox<String> comboTipoProveedor;
-    private JButton botonLogin;
+    private JTextField txtNombre;
+    private JTextField txtApellido;
+    private JTextField txtCedula;
+    private JTextField txtCorreo;
+    private JTextField txtCelular;
+    private JPasswordField txtContrasena;
+    private JButton btnRegistrar;
+    private JButton btnCancelar;
 
-    // Conexión con el gestor de proveedores
-    private GestorRegistroProveedor gestor;
+    public FormularioRegistroProveedor() {
+        setTitle("Registro de Proveedor");
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setSize(400, 400);
+        setLocationRelativeTo(null);
+        setLayout(new BorderLayout(10, 10));
 
-    public FormularioRegistroProveedor(GestorRegistroProveedor gestor) {
-        this.gestor = gestor;
-        inicializar();
+        Color fondo = Color.decode("#f5f5dc");
+        Color encabezadoColor = Color.decode("#b81b2f");
+
+        JLabel lblTitulo = new JLabel("Formulario de Registro", SwingConstants.CENTER);
+        lblTitulo.setFont(new Font("Segoe UI", Font.BOLD, 20));
+        lblTitulo.setForeground(encabezadoColor);
+
+        JPanel panelTitulo = new JPanel(new BorderLayout());
+        panelTitulo.setBackground(fondo);
+        panelTitulo.add(lblTitulo, BorderLayout.CENTER);
+        add(panelTitulo, BorderLayout.NORTH);
+
+        JPanel panelFormulario = new JPanel(new GridLayout(6, 2, 10, 10));
+        panelFormulario.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
+        panelFormulario.setBackground(fondo);
+
+        panelFormulario.add(new JLabel("Nombre:"));
+        txtNombre = new JTextField();
+        panelFormulario.add(txtNombre);
+
+        panelFormulario.add(new JLabel("Apellido:"));
+        txtApellido = new JTextField();
+        panelFormulario.add(txtApellido);
+
+        panelFormulario.add(new JLabel("Cédula:"));
+        txtCedula = new JTextField();
+        panelFormulario.add(txtCedula);
+
+        panelFormulario.add(new JLabel("Correo:"));
+        txtCorreo = new JTextField();
+        panelFormulario.add(txtCorreo);
+
+        panelFormulario.add(new JLabel("Celular:"));
+        txtCelular = new JTextField();
+        panelFormulario.add(txtCelular);
+
+        panelFormulario.add(new JLabel("Contraseña:"));
+        txtContrasena = new JPasswordField();
+        panelFormulario.add(txtContrasena);
+
+        add(panelFormulario, BorderLayout.CENTER);
+
+        JPanel panelBotones = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 10));
+        btnRegistrar = new JButton("Registrar");
+        btnCancelar = new JButton("Cancelar");
+        panelBotones.add(btnRegistrar);
+        panelBotones.add(btnCancelar);
+
+        add(panelBotones, BorderLayout.SOUTH);
     }
 
-    private void inicializar() {
-        setTitle("Inicio de Sesión - Proveedor");
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setSize(400, 250);
-        setLocationRelativeTo(null);
-        setLayout(new GridLayout(4, 2, 10, 10));
+    public String getNombre() { return txtNombre.getText().trim(); }
+    public String getApellido() { return txtApellido.getText().trim(); }
+    public String getCedula() { return txtCedula.getText().trim(); }
+    public String getCorreo() { return txtCorreo.getText().trim(); }
+    public String getCelular() { return txtCelular.getText().trim(); }
+    public String getContrasena() { return new String(txtContrasena.getPassword()).trim(); }
 
-        // Etiquetas y campos
-        JLabel lblCorreo = new JLabel("Correo:");
-        campoCorreo = new JTextField();
+    public JButton getBtnRegistrar() { return btnRegistrar; }
+    public JButton getBtnCancelar() { return btnCancelar; }
 
-        JLabel lblContrasena = new JLabel("Contraseña:");
-        campoContrasena = new JPasswordField();
-
-        JLabel lblTipo = new JLabel("Tipo de Proveedor:");
-        comboTipoProveedor = new JComboBox<>(new String[]{"ProveedorServicio", "ProveedorInsumo"});
-
-        botonLogin = new JButton("Iniciar Sesión");
-
-        // Agregar componentes
-        add(lblCorreo);
-        add(campoCorreo);
-        add(lblContrasena);
-        add(campoContrasena);
-        add(lblTipo);
-        add(comboTipoProveedor);
-        add(new JLabel()); // celda vacía
-        add(botonLogin);
-
-        // Acción del botón
-        botonLogin.addActionListener(e -> {
-            String correo = campoCorreo.getText();
-            String contrasena = new String(campoContrasena.getPassword());
-            String tipo = (String) comboTipoProveedor.getSelectedItem();
-
-            Proveedor proveedor = gestor.iniciarSesion(correo, contrasena, tipo);
-
-            if (proveedor != null) {
-                JOptionPane.showMessageDialog(this,
-                        " Bienvenido " + proveedor.getNombre() + " (" + proveedor.getTipoProveedor() + ")",
-                        "Login Exitoso", JOptionPane.INFORMATION_MESSAGE);
-                dispose();
-            } else {
-                JOptionPane.showMessageDialog(this,
-                        " Credenciales inválidas o tipo de proveedor incorrecto",
-                        "Error de inicio de sesión", JOptionPane.ERROR_MESSAGE);
-            }
-        });
-
-        setVisible(true);
+    public void setControlador(ActionListener controlador) {
+        btnRegistrar.addActionListener(controlador);
+        btnCancelar.addActionListener(controlador);
     }
 }
