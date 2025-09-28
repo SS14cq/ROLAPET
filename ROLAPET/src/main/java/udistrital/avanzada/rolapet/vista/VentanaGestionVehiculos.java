@@ -11,6 +11,12 @@ import udistrital.avanzada.rolapet.modelo.RepositorioVehiculos;
  * @author Sarita
  * @version 1.0, 27-09-2025
  */
+/**
+ * Class VentanaGestionVehiculos.
+ */
+/**
+ * Class VentanaGestionVehiculos.
+ */
 public class VentanaGestionVehiculos extends JFrame {
     private RepositorioVehiculos repositorio;
     private DefaultListModel<String> modeloLista;
@@ -71,6 +77,16 @@ public class VentanaGestionVehiculos extends JFrame {
         btnEliminar.addActionListener(e -> eliminarVehiculo());
     }
 
+/**
+ * actualizarLista method.
+ * @return result
+ */
+/**
+ * actualizarLista method.
+ */
+/**
+ * actualizarLista method.
+ */
     private void actualizarLista() {
         modeloLista.clear();
         List<Vehiculo> vehiculos = repositorio.listarVehiculos();
@@ -79,6 +95,16 @@ public class VentanaGestionVehiculos extends JFrame {
         }
     }
 
+/**
+ * agregarVehiculo method.
+ * @return result
+ */
+/**
+ * agregarVehiculo method.
+ */
+/**
+ * agregarVehiculo method.
+ */
     private void agregarVehiculo() {
         String placa = JOptionPane.showInputDialog(this, "Placa del vehículo:");
         if (placa != null && !placa.trim().isEmpty()) {
@@ -89,6 +115,16 @@ public class VentanaGestionVehiculos extends JFrame {
         }
     }
 
+/**
+ * eliminarVehiculo method.
+ * @return result
+ */
+/**
+ * eliminarVehiculo method.
+ */
+/**
+ * eliminarVehiculo method.
+ */
     private void eliminarVehiculo() {
         int idx = listaVehiculos.getSelectedIndex();
         if (idx >= 0) {

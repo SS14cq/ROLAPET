@@ -8,6 +8,12 @@ import udistrital.avanzada.rolapet.modelo.Vehiculo;
 /**
  * Ventana para mostrar y gestionar los vehículos registrados por el usuario.
  */
+/**
+ * Class VentanaVehiculosUsuario.
+ */
+/**
+ * Class VentanaVehiculosUsuario.
+ */
 public class VentanaVehiculosUsuario extends JFrame {
     private JTable tablaVehiculos;
     private JButton btnAgregarVehiculo;
@@ -51,9 +57,69 @@ public class VentanaVehiculosUsuario extends JFrame {
         add(panelBotones, BorderLayout.SOUTH);
     }
 
+/**
+ * getBtnAgregarVehiculo method.
+ * @return result
+ */
+/**
+ * getBtnAgregarVehiculo method.
+ * @return result
+ */
+/**
+ * getBtnAgregarVehiculo method.
+ * @return result
+ */
     public JButton getBtnAgregarVehiculo() { return btnAgregarVehiculo; }
+/**
+ * getBtnEditarVehiculo method.
+ * @return result
+ */
+/**
+ * getBtnEditarVehiculo method.
+ * @return result
+ */
+/**
+ * getBtnEditarVehiculo method.
+ * @return result
+ */
     public JButton getBtnEditarVehiculo() { return btnEditarVehiculo; }
+/**
+ * getBtnEliminarVehiculo method.
+ * @return result
+ */
+/**
+ * getBtnEliminarVehiculo method.
+ * @return result
+ */
+/**
+ * getBtnEliminarVehiculo method.
+ * @return result
+ */
     public JButton getBtnEliminarVehiculo() { return btnEliminarVehiculo; }
+/**
+ * getBtnCerrar method.
+ * @return result
+ */
+/**
+ * getBtnCerrar method.
+ * @return result
+ */
+/**
+ * getBtnCerrar method.
+ * @return result
+ */
     public JButton getBtnCerrar() { return btnCerrar; }
+/**
+ * getTablaVehiculos method.
+ * @return result
+ */
+/**
+ * getTablaVehiculos method.
+ * @return result
+ */
+/**
+ * getTablaVehiculos method.
+ * @return result
+ */
     public JTable getTablaVehiculos() { return tablaVehiculos; }
 }

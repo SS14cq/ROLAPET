@@ -12,9 +12,27 @@ import java.awt.event.ActionListener;
  * @author Sarita
  * @version 1.3, 25-09-2025
  */
+/**
+ * Class VentanaUsuarios.
+ */
+/**
+ * Class VentanaUsuarios.
+ */
 public class VentanaUsuarios extends JFrame {
+/**
+ * JButton method.
+ * @param sesión" parameter
+ */
     public JButton btnIniciarSesion = new JButton("Iniciar sesión");
+/**
+ * JButton method.
+ * @param "Registrarse" parameter
+ */
     public JButton btnRegistrarse = new JButton("Registrarse");
+/**
+ * JButton method.
+ * @param "Atrás" parameter
+ */
     public JButton btnAtras = new JButton("Atrás");
 
     /**
@@ -82,6 +100,19 @@ public class VentanaUsuarios extends JFrame {
      * 
      * @param controlador ActionListener que manejará los eventos de los botones
      */
+/**
+ * setControlador method.
+ * @param controlador parameter
+ * @return result
+ */
+/**
+ * setControlador method.
+ * @param controlador parameter
+ */
+/**
+ * setControlador method.
+ * @param controlador parameter
+ */
     public void setControlador(ActionListener controlador) {
         btnIniciarSesion.addActionListener(controlador);
         btnRegistrarse.addActionListener(controlador);

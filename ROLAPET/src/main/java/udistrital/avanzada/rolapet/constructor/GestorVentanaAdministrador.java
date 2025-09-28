@@ -5,6 +5,12 @@ import udistrital.avanzada.rolapet.modelo.RepositorioPublicaciones;
 import udistrital.avanzada.rolapet.vista.VentanaAdministrador;
 import udistrital.avanzada.rolapet.vista.VentanaCrearPublicacion;
 
+/**
+ * Class GestorVentanaAdministrador.
+ */
+/**
+ * Class GestorVentanaAdministrador.
+ */
 public class GestorVentanaAdministrador {
     private VentanaAdministrador ventana;
 
@@ -22,12 +28,32 @@ public class GestorVentanaAdministrador {
         ventana.setVisible(true);
     }
 
+/**
+ * abrirVentanaSeleccionRegistroProveedor method.
+ * @return result
+ */
+/**
+ * abrirVentanaSeleccionRegistroProveedor method.
+ */
+/**
+ * abrirVentanaSeleccionRegistroProveedor method.
+ */
     private void abrirVentanaSeleccionRegistroProveedor() {
         udistrital.avanzada.rolapet.vista.VentanaSeleccionRegistroProveedor seleccion = new udistrital.avanzada.rolapet.vista.VentanaSeleccionRegistroProveedor();
         new udistrital.avanzada.rolapet.constructor.GestorSeleccionRegistroProveedor(seleccion, udistrital.avanzada.rolapet.constructor.GestorVentanaInicio.gestorProveedores);
         seleccion.setVisible(true);
     }
 
+/**
+ * abrirVentanaCrearPublicacion method.
+ * @return result
+ */
+/**
+ * abrirVentanaCrearPublicacion method.
+ */
+/**
+ * abrirVentanaCrearPublicacion method.
+ */
     private void abrirVentanaCrearPublicacion() {
         new udistrital.avanzada.rolapet.vista.VentanaCrearPublicacion(repoPublicaciones).setVisible(true);
     }

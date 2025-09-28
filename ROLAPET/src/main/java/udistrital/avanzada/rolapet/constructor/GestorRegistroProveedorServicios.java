@@ -7,6 +7,12 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Class GestorRegistroProveedorServicios.
+ */
+/**
+ * Class GestorRegistroProveedorServicios.
+ */
 public class GestorRegistroProveedorServicios implements ActionListener {
 
     private FormularioRegistroProveedorServicios vista;
@@ -19,6 +25,19 @@ public class GestorRegistroProveedorServicios implements ActionListener {
     }
 
     @Override
+/**
+ * actionPerformed method.
+ * @param e parameter
+ * @return result
+ */
+/**
+ * actionPerformed method.
+ * @param e parameter
+ */
+/**
+ * actionPerformed method.
+ * @param e parameter
+ */
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
 

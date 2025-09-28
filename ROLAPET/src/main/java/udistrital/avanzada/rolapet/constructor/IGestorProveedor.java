@@ -7,6 +7,12 @@ import java.util.List;
 /**
  * Contrato para la gestión de proveedores y sus ítems.
  */
+/**
+ * Interface IGestorProveedor.
+ */
+/**
+ * Interface IGestorProveedor.
+ */
 public interface IGestorProveedor {
     boolean crearItem(Proveedor proveedor, Item item);
     boolean actualizarItem(Proveedor proveedor, Item item);

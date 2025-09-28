@@ -4,6 +4,12 @@
  */
 package udistrital.avanzada.rolapet.vista;
 
+/**
+ * Class FormularioInicioSesionAdministrador.
+ */
+/**
+ * Class FormularioInicioSesionAdministrador.
+ */
 public class FormularioInicioSesionAdministrador extends FormularioInicioSesion {
 
     public FormularioInicioSesionAdministrador() {

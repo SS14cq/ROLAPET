@@ -7,6 +7,12 @@ import udistrital.avanzada.rolapet.modelo.ProveedorServicio;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class GestorRegistroProveedor.
+ */
+/**
+ * Class GestorRegistroProveedor.
+ */
 public class GestorRegistroProveedor {
 
     private List<Proveedor> proveedores;
@@ -41,6 +47,27 @@ public class GestorRegistroProveedor {
      * @param tipo tipo de proveedor ("Servicio", "Insumo", etc.)
      * @return el proveedor encontrado o null si no existe coincidencia
      */
+/**
+ * iniciarSesion method.
+ * @param correo parameter
+ * @param contrasena parameter
+ * @param tipo parameter
+ * @return result
+ */
+/**
+ * iniciarSesion method.
+ * @param correo parameter
+ * @param contrasena parameter
+ * @param tipo parameter
+ * @return result
+ */
+/**
+ * iniciarSesion method.
+ * @param correo parameter
+ * @param contrasena parameter
+ * @param tipo parameter
+ * @return result
+ */
     public Proveedor iniciarSesion(String correo, String contrasena, String tipo) {
         for (Proveedor proveedor : proveedores) {
             if (proveedor.getCorreo().equalsIgnoreCase(correo)
@@ -52,6 +79,18 @@ public class GestorRegistroProveedor {
         return null;
     }
 
+/**
+ * getProveedores method.
+ * @return result
+ */
+/**
+ * getProveedores method.
+ * @return result
+ */
+/**
+ * getProveedores method.
+ * @return result
+ */
     public List<Proveedor> getProveedores() {
         return proveedores;
     }

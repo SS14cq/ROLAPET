@@ -9,6 +9,12 @@ import java.util.List;
 /**
  * Ventana para que el proveedor gestione sus ítems (servicios/insumos).
  */
+/**
+ * Class VentanaGestionItemsProveedor.
+ */
+/**
+ * Class VentanaGestionItemsProveedor.
+ */
 public class VentanaGestionItemsProveedor extends JFrame {
     private JTable tablaItems;
     private DefaultTableModel modeloTabla;
@@ -44,6 +50,19 @@ public class VentanaGestionItemsProveedor extends JFrame {
         cargarItems(items);
     }
 
+/**
+ * cargarItems method.
+ * @param items parameter
+ * @return result
+ */
+/**
+ * cargarItems method.
+ * @param items parameter
+ */
+/**
+ * cargarItems method.
+ * @param items parameter
+ */
     public void cargarItems(List<Item> items) {
         modeloTabla.setRowCount(0);
         for (Item item : items) {
@@ -51,9 +70,69 @@ public class VentanaGestionItemsProveedor extends JFrame {
         }
     }
 
+/**
+ * getTablaItems method.
+ * @return result
+ */
+/**
+ * getTablaItems method.
+ * @return result
+ */
+/**
+ * getTablaItems method.
+ * @return result
+ */
     public JTable getTablaItems() { return tablaItems; }
+/**
+ * getBtnCrear method.
+ * @return result
+ */
+/**
+ * getBtnCrear method.
+ * @return result
+ */
+/**
+ * getBtnCrear method.
+ * @return result
+ */
     public JButton getBtnCrear() { return btnCrear; }
+/**
+ * getBtnEditar method.
+ * @return result
+ */
+/**
+ * getBtnEditar method.
+ * @return result
+ */
+/**
+ * getBtnEditar method.
+ * @return result
+ */
     public JButton getBtnEditar() { return btnEditar; }
+/**
+ * getBtnEliminar method.
+ * @return result
+ */
+/**
+ * getBtnEliminar method.
+ * @return result
+ */
+/**
+ * getBtnEliminar method.
+ * @return result
+ */
     public JButton getBtnEliminar() { return btnEliminar; }
+/**
+ * getBtnCerrar method.
+ * @return result
+ */
+/**
+ * getBtnCerrar method.
+ * @return result
+ */
+/**
+ * getBtnCerrar method.
+ * @return result
+ */
     public JButton getBtnCerrar() { return btnCerrar; }
 }

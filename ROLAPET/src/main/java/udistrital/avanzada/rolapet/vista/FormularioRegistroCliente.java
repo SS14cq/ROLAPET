@@ -12,6 +12,12 @@ import java.awt.event.ActionListener;
  * @author Sarita
  * @version 1.2, 25-09-2025
  */
+/**
+ * Class FormularioRegistroCliente.
+ */
+/**
+ * Class FormularioRegistroCliente.
+ */
 public class FormularioRegistroCliente extends JFrame {
     private JTextField txtNombre;
     private JTextField txtApellido;
@@ -130,20 +136,138 @@ public class FormularioRegistroCliente extends JFrame {
         setLocationRelativeTo(null);
     }
 
+/**
+ * getNombre method.
+ * @return result
+ */
+/**
+ * getNombre method.
+ * @return result
+ */
+/**
+ * getNombre method.
+ * @return result
+ */
     public String getNombre() { return txtNombre.getText().trim(); }
+/**
+ * getApellido method.
+ * @return result
+ */
+/**
+ * getApellido method.
+ * @return result
+ */
+/**
+ * getApellido method.
+ * @return result
+ */
     public String getApellido() { return txtApellido.getText().trim(); }
+/**
+ * getCedula method.
+ * @return result
+ */
+/**
+ * getCedula method.
+ * @return result
+ */
+/**
+ * getCedula method.
+ * @return result
+ */
     public String getCedula() { return txtCedula.getText().trim(); }
+/**
+ * getCorreo method.
+ * @return result
+ */
+/**
+ * getCorreo method.
+ * @return result
+ */
+/**
+ * getCorreo method.
+ * @return result
+ */
     public String getCorreo() { return txtCorreo.getText().trim(); }
+/**
+ * getCelular method.
+ * @return result
+ */
+/**
+ * getCelular method.
+ * @return result
+ */
+/**
+ * getCelular method.
+ * @return result
+ */
     public String getCelular() { return txtCelular.getText().trim(); }
+/**
+ * getNombreUsuario method.
+ * @return result
+ */
+/**
+ * getNombreUsuario method.
+ * @return result
+ */
+/**
+ * getNombreUsuario method.
+ * @return result
+ */
     public String getNombreUsuario() { return txtNombreUsuario.getText().trim(); }
+/**
+ * getContrasena method.
+ * @return result
+ */
+/**
+ * getContrasena method.
+ * @return result
+ */
+/**
+ * getContrasena method.
+ * @return result
+ */
     public String getContrasena() { return new String(txtContrasena.getPassword()); }
 
+/**
+ * getBtnRegistrar method.
+ * @return result
+ */
+/**
+ * getBtnRegistrar method.
+ * @return result
+ */
+/**
+ * getBtnRegistrar method.
+ * @return result
+ */
     public JButton getBtnRegistrar() { return btnRegistrar; }
+/**
+ * getBtnAtras method.
+ * @return result
+ */
+/**
+ * getBtnAtras method.
+ * @return result
+ */
+/**
+ * getBtnAtras method.
+ * @return result
+ */
     public JButton getBtnAtras() { return btnAtras; }
 
     /**
      * Limpia todos los campos del formulario dejando los textos vacíos.
      */
+/**
+ * limpiarCampos method.
+ * @return result
+ */
+/**
+ * limpiarCampos method.
+ */
+/**
+ * limpiarCampos method.
+ */
     public void limpiarCampos() {
         txtNombre.setText("");
         txtApellido.setText("");
@@ -159,6 +283,19 @@ public class FormularioRegistroCliente extends JFrame {
      * 
      * @param controlador ActionListener que gestionará los eventos de los botones
      */
+/**
+ * setControlador method.
+ * @param controlador parameter
+ * @return result
+ */
+/**
+ * setControlador method.
+ * @param controlador parameter
+ */
+/**
+ * setControlador method.
+ * @param controlador parameter
+ */
     public void setControlador(ActionListener controlador) {
         btnRegistrar.addActionListener(controlador);
         btnAtras.addActionListener(controlador);

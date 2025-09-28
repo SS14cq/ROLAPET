@@ -9,6 +9,12 @@ import java.util.List;
 /**
  * Ventana para que el proveedor gestione sus publicaciones (eventos/promociones).
  */
+/**
+ * Class VentanaGestionPublicacionesProveedor.
+ */
+/**
+ * Class VentanaGestionPublicacionesProveedor.
+ */
 public class VentanaGestionPublicacionesProveedor extends JFrame {
     private JTable tablaPublicaciones;
     private DefaultTableModel modeloTabla;
@@ -44,6 +50,19 @@ public class VentanaGestionPublicacionesProveedor extends JFrame {
         cargarPublicaciones(publicaciones);
     }
 
+/**
+ * cargarPublicaciones method.
+ * @param publicaciones parameter
+ * @return result
+ */
+/**
+ * cargarPublicaciones method.
+ * @param publicaciones parameter
+ */
+/**
+ * cargarPublicaciones method.
+ * @param publicaciones parameter
+ */
     public void cargarPublicaciones(List<Publicacion> publicaciones) {
         modeloTabla.setRowCount(0);
         for (Publicacion pub : publicaciones) {
@@ -51,9 +70,69 @@ public class VentanaGestionPublicacionesProveedor extends JFrame {
         }
     }
 
+/**
+ * getTablaPublicaciones method.
+ * @return result
+ */
+/**
+ * getTablaPublicaciones method.
+ * @return result
+ */
+/**
+ * getTablaPublicaciones method.
+ * @return result
+ */
     public JTable getTablaPublicaciones() { return tablaPublicaciones; }
+/**
+ * getBtnCrear method.
+ * @return result
+ */
+/**
+ * getBtnCrear method.
+ * @return result
+ */
+/**
+ * getBtnCrear method.
+ * @return result
+ */
     public JButton getBtnCrear() { return btnCrear; }
+/**
+ * getBtnEditar method.
+ * @return result
+ */
+/**
+ * getBtnEditar method.
+ * @return result
+ */
+/**
+ * getBtnEditar method.
+ * @return result
+ */
     public JButton getBtnEditar() { return btnEditar; }
+/**
+ * getBtnEliminar method.
+ * @return result
+ */
+/**
+ * getBtnEliminar method.
+ * @return result
+ */
+/**
+ * getBtnEliminar method.
+ * @return result
+ */
     public JButton getBtnEliminar() { return btnEliminar; }
+/**
+ * getBtnCerrar method.
+ * @return result
+ */
+/**
+ * getBtnCerrar method.
+ * @return result
+ */
+/**
+ * getBtnCerrar method.
+ * @return result
+ */
     public JButton getBtnCerrar() { return btnCerrar; }
 }

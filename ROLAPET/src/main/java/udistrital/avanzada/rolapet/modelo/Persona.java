@@ -11,6 +11,12 @@ package udistrital.avanzada.rolapet.modelo;
  * @author Sarita
  * @version 1.2, 26-09-2025
  */
+/**
+ * Class Persona.
+ */
+/**
+ * Class Persona.
+ */
 public class Persona {
     private String nombre;
     private String apellido;
@@ -36,20 +42,82 @@ public class Persona {
         setCelular(celular);
     }
 
+/**
+ * getNombre method.
+ * @return result
+ */
+/**
+ * getNombre method.
+ * @return result
+ */
+/**
+ * getNombre method.
+ * @return result
+ */
     public String getNombre() {
         return nombre;
     }
+/**
+ * setNombre method.
+ * @param nombre parameter
+ * @return result
+ */
+/**
+ * setNombre method.
+ * @param nombre parameter
+ */
+/**
+ * setNombre method.
+ * @param nombre parameter
+ */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+/**
+ * getApellido method.
+ * @return result
+ */
+/**
+ * getApellido method.
+ * @return result
+ */
+/**
+ * getApellido method.
+ * @return result
+ */
     public String getApellido() {
         return apellido;
     }
+/**
+ * setApellido method.
+ * @param apellido parameter
+ * @return result
+ */
+/**
+ * setApellido method.
+ * @param apellido parameter
+ */
+/**
+ * setApellido method.
+ * @param apellido parameter
+ */
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
 
+/**
+ * getCedula method.
+ * @return result
+ */
+/**
+ * getCedula method.
+ * @return result
+ */
+/**
+ * getCedula method.
+ * @return result
+ */
     public String getCedula() {
         return cedula;
     }
@@ -61,6 +129,19 @@ public class Persona {
      * @param cedula cédula a asignar (solo números enteros)
      * @throws IllegalArgumentException si la cédula no contiene solo números
      */
+/**
+ * setCedula method.
+ * @param cedula parameter
+ * @return result
+ */
+/**
+ * setCedula method.
+ * @param cedula parameter
+ */
+/**
+ * setCedula method.
+ * @param cedula parameter
+ */
     public void setCedula(String cedula) {
         if (cedula != null && cedula.matches("\\d+")) {
             this.cedula = cedula;
@@ -69,6 +150,18 @@ public class Persona {
         }
     }
 
+/**
+ * getCorreo method.
+ * @return result
+ */
+/**
+ * getCorreo method.
+ * @return result
+ */
+/**
+ * getCorreo method.
+ * @return result
+ */
     public String getCorreo() {
         return correo;
     }
@@ -80,6 +173,19 @@ public class Persona {
      * @param correo correo a asignar (valido)
      * @throws IllegalArgumentException si el correo no es válido
      */
+/**
+ * setCorreo method.
+ * @param correo parameter
+ * @return result
+ */
+/**
+ * setCorreo method.
+ * @param correo parameter
+ */
+/**
+ * setCorreo method.
+ * @param correo parameter
+ */
     public void setCorreo(String correo) {
         if (correo != null && correo.matches("^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$")) {
             this.correo = correo;
@@ -88,6 +194,18 @@ public class Persona {
         }
     }
 
+/**
+ * getCelular method.
+ * @return result
+ */
+/**
+ * getCelular method.
+ * @return result
+ */
+/**
+ * getCelular method.
+ * @return result
+ */
     public String getCelular() {
         return celular;
     }
@@ -99,6 +217,19 @@ public class Persona {
      * @param celular número de celular a asignar (exactamente 10 dígitos)
      * @throws IllegalArgumentException si celular no tiene 10 números
      */
+/**
+ * setCelular method.
+ * @param celular parameter
+ * @return result
+ */
+/**
+ * setCelular method.
+ * @param celular parameter
+ */
+/**
+ * setCelular method.
+ * @param celular parameter
+ */
     public void setCelular(String celular) {
         if (celular != null && celular.matches("\\d{10}")) {
             this.celular = celular;

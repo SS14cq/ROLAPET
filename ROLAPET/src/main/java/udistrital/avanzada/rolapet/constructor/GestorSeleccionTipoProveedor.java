@@ -7,7 +7,17 @@ import udistrital.avanzada.rolapet.modelo.RepositorioPublicaciones;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Class GestorSeleccionTipoProveedor.
+ */
+/**
+ * Class GestorSeleccionTipoProveedor.
+ */
 public class GestorSeleccionTipoProveedor implements ActionListener {
+/**
+ * getRepoPublicacionesGlobal method.
+ * @return result
+ */
     public static RepositorioPublicaciones getRepoPublicacionesGlobal() {
         return repoPublicacionesGlobal;
     }
@@ -27,6 +37,19 @@ public class GestorSeleccionTipoProveedor implements ActionListener {
     }
 
     @Override
+/**
+ * actionPerformed method.
+ * @param e parameter
+ * @return result
+ */
+/**
+ * actionPerformed method.
+ * @param e parameter
+ */
+/**
+ * actionPerformed method.
+ * @param e parameter
+ */
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
 
@@ -37,6 +60,19 @@ public class GestorSeleccionTipoProveedor implements ActionListener {
         }
     }
 
+/**
+ * abrirLogin method.
+ * @param tipo parameter
+ * @return result
+ */
+/**
+ * abrirLogin method.
+ * @param tipo parameter
+ */
+/**
+ * abrirLogin method.
+ * @param tipo parameter
+ */
     private void abrirLogin(String tipo) {
     FormularioInicioSesionProveedor login = new FormularioInicioSesionProveedor(tipo);
     new GestorInicioSesionProveedor(login, gestorProveedor, repoPublicacionesGlobal);

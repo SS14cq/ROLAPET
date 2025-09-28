@@ -3,6 +3,12 @@ package udistrital.avanzada.rolapet.vista;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Class FormularioRegistroProveedorInsumos.
+ */
+/**
+ * Class FormularioRegistroProveedorInsumos.
+ */
 public class FormularioRegistroProveedorInsumos extends FormularioRegistroProveedor {
     private JFrame ventanaAnterior;
 

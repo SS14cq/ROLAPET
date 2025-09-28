@@ -12,6 +12,12 @@ import java.time.LocalDate;
 /**
  * Gestor para la ventana de gestión de publicaciones del proveedor.
  */
+/**
+ * Class GestorGestionPublicacionesProveedor.
+ */
+/**
+ * Class GestorGestionPublicacionesProveedor.
+ */
 public class GestorGestionPublicacionesProveedor implements ActionListener {
     private VentanaGestionPublicacionesProveedor vista;
     private Proveedor proveedor;
@@ -28,6 +34,19 @@ public class GestorGestionPublicacionesProveedor implements ActionListener {
     }
 
     @Override
+/**
+ * actionPerformed method.
+ * @param e parameter
+ * @return result
+ */
+/**
+ * actionPerformed method.
+ * @param e parameter
+ */
+/**
+ * actionPerformed method.
+ * @param e parameter
+ */
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
         if (source == vista.getBtnCrear()) {

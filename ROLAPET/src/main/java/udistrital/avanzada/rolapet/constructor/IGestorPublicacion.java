@@ -7,6 +7,12 @@ import java.util.List;
 /**
  * Contrato para la gestión de publicaciones (eventos, promociones, etc.).
  */
+/**
+ * Interface IGestorPublicacion.
+ */
+/**
+ * Interface IGestorPublicacion.
+ */
 public interface IGestorPublicacion {
     boolean crearPublicacion(Proveedor proveedor, Publicacion publicacion);
     boolean actualizarPublicacion(Proveedor proveedor, Publicacion publicacion);

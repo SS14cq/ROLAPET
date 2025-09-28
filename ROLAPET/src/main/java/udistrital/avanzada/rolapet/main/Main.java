@@ -14,7 +14,18 @@ import udistrital.avanzada.rolapet.vista.VentanaInicio;
  * @author Sarita
  * @version 1.1, 21-09-2025
  */
+/**
+ * Class Main.
+ */
+/**
+ * Class Main.
+ */
 public class Main {
+/**
+ * main method.
+ * @param args parameter
+ * @return result
+ */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             ControladorUsuario controladorUsuario = new ControladorUsuario();

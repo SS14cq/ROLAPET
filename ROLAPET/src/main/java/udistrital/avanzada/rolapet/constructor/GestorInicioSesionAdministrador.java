@@ -11,6 +11,12 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Class GestorInicioSesionAdministrador.
+ */
+/**
+ * Class GestorInicioSesionAdministrador.
+ */
 public class GestorInicioSesionAdministrador implements ActionListener {
 
     private FormularioInicioSesionAdministrador vista;
@@ -32,6 +38,19 @@ public class GestorInicioSesionAdministrador implements ActionListener {
     }
 
     @Override
+/**
+ * actionPerformed method.
+ * @param e parameter
+ * @return result
+ */
+/**
+ * actionPerformed method.
+ * @param e parameter
+ */
+/**
+ * actionPerformed method.
+ * @param e parameter
+ */
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
 

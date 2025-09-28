@@ -3,6 +3,12 @@ package udistrital.avanzada.rolapet.vista;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Class VentanaProveedor.
+ */
+/**
+ * Class VentanaProveedor.
+ */
 public class VentanaProveedor extends JFrame {
 
     private JButton btnVerPublicaciones;
@@ -100,22 +106,83 @@ public class VentanaProveedor extends JFrame {
         add(centro, BorderLayout.CENTER);
     }
 
+/**
+ * getBtnVerPublicaciones method.
+ * @return result
+ */
+/**
+ * getBtnVerPublicaciones method.
+ * @return result
+ */
+/**
+ * getBtnVerPublicaciones method.
+ * @return result
+ */
     public JButton getBtnVerPublicaciones() {
         return btnVerPublicaciones;
     }
 
+/**
+ * getBtnAgregarItem method.
+ * @return result
+ */
+/**
+ * getBtnAgregarItem method.
+ * @return result
+ */
+/**
+ * getBtnAgregarItem method.
+ * @return result
+ */
     public JButton getBtnAgregarItem() {
         return btnAgregarItem;
     }
 
 
+/**
+ * getBtnCrearPublicacion method.
+ * @return result
+ */
+/**
+ * getBtnCrearPublicacion method.
+ * @return result
+ */
+/**
+ * getBtnCrearPublicacion method.
+ * @return result
+ */
     public JButton getBtnCrearPublicacion() {
         return btnCrearPublicacion;
     }
+/**
+ * getBtnCerrarSesion method.
+ * @return result
+ */
+/**
+ * getBtnCerrarSesion method.
+ * @return result
+ */
+/**
+ * getBtnCerrarSesion method.
+ * @return result
+ */
     public JButton getBtnCerrarSesion() {
         return btnCerrarSesion;
     }
 
+/**
+ * setControlador method.
+ * @param controlador parameter
+ * @return result
+ */
+/**
+ * setControlador method.
+ * @param controlador parameter
+ */
+/**
+ * setControlador method.
+ * @param controlador parameter
+ */
     public void setControlador(java.awt.event.ActionListener controlador) {
         btnVerPublicaciones.addActionListener(controlador);
         btnAgregarItem.addActionListener(controlador);

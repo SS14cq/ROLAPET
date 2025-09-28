@@ -26,6 +26,12 @@ import java.awt.event.ActionListener;
  * @version 1.3
  */
 
+/**
+ * Class GestorVentanaInicio.
+ */
+/**
+ * Class GestorVentanaInicio.
+ */
 public class GestorVentanaInicio implements ActionListener {
 
     /** Ventana de inicio que se va a controlar */
@@ -68,6 +74,19 @@ public class GestorVentanaInicio implements ActionListener {
      * @param e evento generado al presionar un botón
      */
     @Override
+/**
+ * actionPerformed method.
+ * @param e parameter
+ * @return result
+ */
+/**
+ * actionPerformed method.
+ * @param e parameter
+ */
+/**
+ * actionPerformed method.
+ * @param e parameter
+ */
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
 

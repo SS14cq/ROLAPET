@@ -8,6 +8,12 @@ package udistrital.avanzada.rolapet.modelo;
  * @author Sarita
  * @version 1.1, 25-09-2025
  */
+/**
+ * Class Cliente.
+ */
+/**
+ * Class Cliente.
+ */
 public class Cliente extends Usuario {
 
     /**

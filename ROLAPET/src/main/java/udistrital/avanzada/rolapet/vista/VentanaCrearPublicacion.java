@@ -12,6 +12,12 @@ import udistrital.avanzada.rolapet.modelo.RepositorioPublicaciones;
  * @author Sarita
  * @version 1.0, 27-09-2025
  */
+/**
+ * Class VentanaCrearPublicacion.
+ */
+/**
+ * Class VentanaCrearPublicacion.
+ */
 public class VentanaCrearPublicacion extends JFrame {
     private JTextField campoTitulo, campoId;
     private JTextArea campoDescripcion;

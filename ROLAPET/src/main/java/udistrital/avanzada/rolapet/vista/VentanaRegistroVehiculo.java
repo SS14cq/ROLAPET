@@ -13,6 +13,12 @@ import java.awt.event.ItemEvent;
  * @author Sarita
  * @version 1.1, 25-09-2025
  */
+/**
+ * Class VentanaRegistroVehiculo.
+ */
+/**
+ * Class VentanaRegistroVehiculo.
+ */
 public class VentanaRegistroVehiculo extends JFrame {
     private JFrame owner;
     private JComboBox<String> comboTipoVehiculo;
@@ -222,6 +228,19 @@ public class VentanaRegistroVehiculo extends JFrame {
      * 
      * @param tipo Tipo de vehículo seleccionado ("Scooter" o "Motoeléctrica").
      */
+/**
+ * mostrarCamposEspecificos method.
+ * @param tipo parameter
+ * @return result
+ */
+/**
+ * mostrarCamposEspecificos method.
+ * @param tipo parameter
+ */
+/**
+ * mostrarCamposEspecificos method.
+ * @param tipo parameter
+ */
     private void mostrarCamposEspecificos(String tipo) {
         boolean esScooter = "Scooter".equals(tipo);
 
@@ -235,40 +254,242 @@ public class VentanaRegistroVehiculo extends JFrame {
     }
 
     // Getters públicos para obtener datos
+/**
+ * getOwnerWindow method.
+ * @return result
+ */
+/**
+ * getOwnerWindow method.
+ * @return result
+ */
+/**
+ * getOwnerWindow method.
+ * @return result
+ */
     public JFrame getOwnerWindow() {
         return owner;
     }
+/**
+ * getTipoVehiculo method.
+ * @return result
+ */
+/**
+ * getTipoVehiculo method.
+ * @return result
+ */
+/**
+ * getTipoVehiculo method.
+ * @return result
+ */
     public String getTipoVehiculo() { return (String) comboTipoVehiculo.getSelectedItem(); }
+/**
+ * getPlaca method.
+ * @return result
+ */
+/**
+ * getPlaca method.
+ * @return result
+ */
+/**
+ * getPlaca method.
+ * @return result
+ */
     public String getPlaca() { return campoPlaca.getText().trim(); }
+/**
+ * getMarca method.
+ * @return result
+ */
+/**
+ * getMarca method.
+ * @return result
+ */
+/**
+ * getMarca method.
+ * @return result
+ */
     public String getMarca() { return campoMarca.getText().trim(); }
+/**
+ * getModelo method.
+ * @return result
+ */
+/**
+ * getModelo method.
+ * @return result
+ */
+/**
+ * getModelo method.
+ * @return result
+ */
     public String getModelo() { return campoModelo.getText().trim(); }
 
+/**
+ * getAutonomia method.
+ * @return result
+ */
+/**
+ * getAutonomia method.
+ * @return result
+ */
+/**
+ * getAutonomia method.
+ * @return result
+ */
     public double getAutonomia() {
         try { return Double.parseDouble(campoAutonomia.getText().trim()); }
         catch (NumberFormatException e) { return 0; }
     }
+/**
+ * getPotencia method.
+ * @return result
+ */
+/**
+ * getPotencia method.
+ * @return result
+ */
+/**
+ * getPotencia method.
+ * @return result
+ */
     public int getPotencia() {
         try { return Integer.parseInt(campoPotencia.getText().trim()); }
         catch (NumberFormatException e) { return 0; }
     }
+/**
+ * getVelocidad method.
+ * @return result
+ */
+/**
+ * getVelocidad method.
+ * @return result
+ */
+/**
+ * getVelocidad method.
+ * @return result
+ */
     public double getVelocidad() {
         try { return Double.parseDouble(campoVelocidad.getText().trim()); }
         catch (NumberFormatException e) { return 0; }
     }
 
+/**
+ * isLlantasOffRoad method.
+ * @return result
+ */
+/**
+ * isLlantasOffRoad method.
+ * @return result
+ */
+/**
+ * isLlantasOffRoad method.
+ * @return result
+ */
     public boolean isLlantasOffRoad() { return chkLlantasOffRoad.isSelected(); }
+/**
+ * isIluminacionAvanzada method.
+ * @return result
+ */
+/**
+ * isIluminacionAvanzada method.
+ * @return result
+ */
+/**
+ * isIluminacionAvanzada method.
+ * @return result
+ */
     public boolean isIluminacionAvanzada() { return chkIluminacionAvanzada.isSelected(); }
+/**
+ * isFrenosDisco method.
+ * @return result
+ */
+/**
+ * isFrenosDisco method.
+ * @return result
+ */
+/**
+ * isFrenosDisco method.
+ * @return result
+ */
     public boolean isFrenosDisco() { return chkFrenosDisco.isSelected(); }
+/**
+ * isSuspensionAlta method.
+ * @return result
+ */
+/**
+ * isSuspensionAlta method.
+ * @return result
+ */
+/**
+ * isSuspensionAlta method.
+ * @return result
+ */
     public boolean isSuspensionAlta() { return chkSuspensionAlta.isSelected(); }
+/**
+ * isLucesLED method.
+ * @return result
+ */
+/**
+ * isLucesLED method.
+ * @return result
+ */
+/**
+ * isLucesLED method.
+ * @return result
+ */
     public boolean isLucesLED() { return chkLucesLED.isSelected(); }
+/**
+ * isAlarmaAntiRobo method.
+ * @return result
+ */
+/**
+ * isAlarmaAntiRobo method.
+ * @return result
+ */
+/**
+ * isAlarmaAntiRobo method.
+ * @return result
+ */
     public boolean isAlarmaAntiRobo() { return chkAlarmaAntiRobo.isSelected(); }
 
+/**
+ * getBtnRegistrar method.
+ * @return result
+ */
+/**
+ * getBtnRegistrar method.
+ * @return result
+ */
+/**
+ * getBtnRegistrar method.
+ * @return result
+ */
     public JButton getBtnRegistrar() { return btnRegistrar; }
+/**
+ * getBtnCancelar method.
+ * @return result
+ */
+/**
+ * getBtnCancelar method.
+ * @return result
+ */
+/**
+ * getBtnCancelar method.
+ * @return result
+ */
     public JButton getBtnCancelar() { return btnCancelar; }
 
     /**
      * Limpia todos los campos y desmarca todos los checkboxes dejando el formulario vacío.
      */
+/**
+ * limpiarCampos method.
+ * @return result
+ */
+/**
+ * limpiarCampos method.
+ */
+/**
+ * limpiarCampos method.
+ */
     public void limpiarCampos() {
         campoPlaca.setText("");
         campoMarca.setText("");

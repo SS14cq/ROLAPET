@@ -8,6 +8,12 @@ package udistrital.avanzada.rolapet.modelo;
  * @author Sarita
  * @version 1.1, 25-09-2025
  */
+/**
+ * Class Scooter.
+ */
+/**
+ * Class Scooter.
+ */
 public class Scooter extends Vehiculo {
     private boolean llantasOffRoad;
     private boolean iluminacionAvanzada;
@@ -31,10 +37,60 @@ public class Scooter extends Vehiculo {
         this.iluminacionAvanzada = iluminacionAvanzada;
     }
 
+/**
+ * isLlantasOffRoad method.
+ * @return result
+ */
+/**
+ * isLlantasOffRoad method.
+ * @return result
+ */
+/**
+ * isLlantasOffRoad method.
+ * @return result
+ */
     public boolean isLlantasOffRoad() { return llantasOffRoad; }
+/**
+ * setLlantasOffRoad method.
+ * @param llantasOffRoad parameter
+ * @return result
+ */
+/**
+ * setLlantasOffRoad method.
+ * @param llantasOffRoad parameter
+ */
+/**
+ * setLlantasOffRoad method.
+ * @param llantasOffRoad parameter
+ */
     public void setLlantasOffRoad(boolean llantasOffRoad) { this.llantasOffRoad = llantasOffRoad; }
 
+/**
+ * isIluminacionAvanzada method.
+ * @return result
+ */
+/**
+ * isIluminacionAvanzada method.
+ * @return result
+ */
+/**
+ * isIluminacionAvanzada method.
+ * @return result
+ */
     public boolean isIluminacionAvanzada() { return iluminacionAvanzada; }
+/**
+ * setIluminacionAvanzada method.
+ * @param iluminacionAvanzada parameter
+ * @return result
+ */
+/**
+ * setIluminacionAvanzada method.
+ * @param iluminacionAvanzada parameter
+ */
+/**
+ * setIluminacionAvanzada method.
+ * @param iluminacionAvanzada parameter
+ */
     public void setIluminacionAvanzada(boolean iluminacionAvanzada) { this.iluminacionAvanzada = iluminacionAvanzada; }
 
     /**
@@ -44,6 +100,18 @@ public class Scooter extends Vehiculo {
      * @return descripción detallada del vehículo
      */
     @Override
+/**
+ * getDescripcion method.
+ * @return result
+ */
+/**
+ * getDescripcion method.
+ * @return result
+ */
+/**
+ * getDescripcion method.
+ * @return result
+ */
     public String getDescripcion() {
         return super.getDescripcion() +
                 ", Llantas off-road: " + (llantasOffRoad ? "Sí" : "No") +

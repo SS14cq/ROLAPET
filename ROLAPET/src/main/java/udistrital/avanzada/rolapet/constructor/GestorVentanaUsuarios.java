@@ -16,6 +16,12 @@ import java.awt.event.ActionListener;
  * @author Sarita
  * @version 1.4, 27-09-2025
  */
+/**
+ * Class GestorVentanaUsuarios.
+ */
+/**
+ * Class GestorVentanaUsuarios.
+ */
 public class GestorVentanaUsuarios implements ActionListener {
 
     private VentanaUsuarios ventanaUsuarios;
@@ -32,6 +38,19 @@ public class GestorVentanaUsuarios implements ActionListener {
     }
 
     @Override
+/**
+ * actionPerformed method.
+ * @param e parameter
+ * @return result
+ */
+/**
+ * actionPerformed method.
+ * @param e parameter
+ */
+/**
+ * actionPerformed method.
+ * @param e parameter
+ */
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
 

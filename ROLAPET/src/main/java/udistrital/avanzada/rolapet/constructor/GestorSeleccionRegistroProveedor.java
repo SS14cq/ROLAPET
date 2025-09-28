@@ -7,6 +7,12 @@ import udistrital.avanzada.rolapet.vista.VentanaSeleccionRegistroProveedor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Class GestorSeleccionRegistroProveedor.
+ */
+/**
+ * Class GestorSeleccionRegistroProveedor.
+ */
 public class GestorSeleccionRegistroProveedor implements ActionListener {
 
     private VentanaSeleccionRegistroProveedor vista;
@@ -20,6 +26,19 @@ public class GestorSeleccionRegistroProveedor implements ActionListener {
     }
 
     @Override
+/**
+ * actionPerformed method.
+ * @param e parameter
+ * @return result
+ */
+/**
+ * actionPerformed method.
+ * @param e parameter
+ */
+/**
+ * actionPerformed method.
+ * @param e parameter
+ */
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
 

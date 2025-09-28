@@ -4,6 +4,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+/**
+ * Class VentanaAdministrador.
+ */
+/**
+ * Class VentanaAdministrador.
+ */
 public class VentanaAdministrador extends JFrame {
     private JButton btnRegistrarProveedor;
     private JButton btnCrearPublicacion;
@@ -69,12 +75,51 @@ public class VentanaAdministrador extends JFrame {
         setLocationRelativeTo(null);
     }
 
+/**
+ * setRegistrarProveedorListener method.
+ * @param listener parameter
+ * @return result
+ */
+/**
+ * setRegistrarProveedorListener method.
+ * @param listener parameter
+ */
+/**
+ * setRegistrarProveedorListener method.
+ * @param listener parameter
+ */
     public void setRegistrarProveedorListener(ActionListener listener) {
         btnRegistrarProveedor.addActionListener(listener);
     }
+/**
+ * setCrearPublicacionListener method.
+ * @param listener parameter
+ * @return result
+ */
+/**
+ * setCrearPublicacionListener method.
+ * @param listener parameter
+ */
+/**
+ * setCrearPublicacionListener method.
+ * @param listener parameter
+ */
     public void setCrearPublicacionListener(ActionListener listener) {
         btnCrearPublicacion.addActionListener(listener);
     }
+/**
+ * setCerrarSesionListener method.
+ * @param listener parameter
+ * @return result
+ */
+/**
+ * setCerrarSesionListener method.
+ * @param listener parameter
+ */
+/**
+ * setCerrarSesionListener method.
+ * @param listener parameter
+ */
     public void setCerrarSesionListener(ActionListener listener) {
         btnCerrarSesion.addActionListener(listener);
     }

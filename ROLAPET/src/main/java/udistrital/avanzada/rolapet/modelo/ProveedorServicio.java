@@ -1,5 +1,11 @@
 package udistrital.avanzada.rolapet.modelo;
 
+/**
+ * Class ProveedorServicio.
+ */
+/**
+ * Class ProveedorServicio.
+ */
 public class ProveedorServicio extends Proveedor {
 
     public ProveedorServicio(String nombreUsuario, String contrasena,
@@ -9,6 +15,18 @@ public class ProveedorServicio extends Proveedor {
     }
 
     @Override
+/**
+ * getTipoProveedor method.
+ * @return result
+ */
+/**
+ * getTipoProveedor method.
+ * @return result
+ */
+/**
+ * getTipoProveedor method.
+ * @return result
+ */
     public String getTipoProveedor() {
         return "Servicio";
     }

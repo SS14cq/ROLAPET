@@ -17,6 +17,12 @@ import java.util.List;
  * @author Sarita
  * @version 1.2, 25-09-2025
  */
+/**
+ * Class ControladorVehiculo.
+ */
+/**
+ * Class ControladorVehiculo.
+ */
 public class ControladorVehiculo {
     private List<Vehiculo> vehiculos;
 
@@ -36,6 +42,21 @@ public class ControladorVehiculo {
      * @return true si se registró exitosamente, false si ya existe un vehículo
      *         con la misma marca y modelo
      */
+/**
+ * registrarVehiculo method.
+ * @param vehiculo parameter
+ * @return result
+ */
+/**
+ * registrarVehiculo method.
+ * @param vehiculo parameter
+ * @return result
+ */
+/**
+ * registrarVehiculo method.
+ * @param vehiculo parameter
+ * @return result
+ */
     public boolean registrarVehiculo(Vehiculo vehiculo) {
         if (buscarVehiculo(vehiculo.getMarca(), vehiculo.getModelo()) != null) {
             return false; // vehículo ya existe
@@ -52,6 +73,24 @@ public class ControladorVehiculo {
      * @param modelo modelo del vehículo a buscar
      * @return el Vehiculo encontrado o null si no existe ninguno con la marca y modelo indicados
      */
+/**
+ * buscarVehiculo method.
+ * @param marca parameter
+ * @param modelo parameter
+ * @return result
+ */
+/**
+ * buscarVehiculo method.
+ * @param marca parameter
+ * @param modelo parameter
+ * @return result
+ */
+/**
+ * buscarVehiculo method.
+ * @param marca parameter
+ * @param modelo parameter
+ * @return result
+ */
     public Vehiculo buscarVehiculo(String marca, String modelo) {
         for (Vehiculo v : vehiculos) {
             if (v.getMarca().equalsIgnoreCase(marca) && v.getModelo().equalsIgnoreCase(modelo)) {
@@ -66,6 +105,18 @@ public class ControladorVehiculo {
      * 
      * @return lista de vehículos registrados
      */
+/**
+ * obtenerVehiculos method.
+ * @return result
+ */
+/**
+ * obtenerVehiculos method.
+ * @return result
+ */
+/**
+ * obtenerVehiculos method.
+ * @return result
+ */
     public List<Vehiculo> obtenerVehiculos() {
         return vehiculos;
     }

@@ -12,6 +12,12 @@ import java.util.List;
 /**
  * Gestor para la ventana de gestión de ítems del proveedor.
  */
+/**
+ * Class GestorGestionItemsProveedor.
+ */
+/**
+ * Class GestorGestionItemsProveedor.
+ */
 public class GestorGestionItemsProveedor implements ActionListener {
     private VentanaGestionItemsProveedor vista;
     private Proveedor proveedor;
@@ -28,6 +34,19 @@ public class GestorGestionItemsProveedor implements ActionListener {
     }
 
     @Override
+/**
+ * actionPerformed method.
+ * @param e parameter
+ * @return result
+ */
+/**
+ * actionPerformed method.
+ * @param e parameter
+ */
+/**
+ * actionPerformed method.
+ * @param e parameter
+ */
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
         if (source == vista.getBtnCrear()) {

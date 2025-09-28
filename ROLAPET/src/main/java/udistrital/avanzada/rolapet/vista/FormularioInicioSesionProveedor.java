@@ -2,6 +2,12 @@ package udistrital.avanzada.rolapet.vista;
 
 import java.awt.Color;
 
+/**
+ * Class FormularioInicioSesionProveedor.
+ */
+/**
+ * Class FormularioInicioSesionProveedor.
+ */
 public class FormularioInicioSesionProveedor extends FormularioInicioSesion {
 
     private String tipoProveedor; // "ProveedorServicio" o "ProveedorInsumo"
@@ -22,6 +28,18 @@ public class FormularioInicioSesionProveedor extends FormularioInicioSesion {
         btnCancelar.setForeground(Color.WHITE);
     }
 
+/**
+ * getTipoProveedor method.
+ * @return result
+ */
+/**
+ * getTipoProveedor method.
+ * @return result
+ */
+/**
+ * getTipoProveedor method.
+ * @return result
+ */
     public String getTipoProveedor() {
         return tipoProveedor;
     }

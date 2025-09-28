@@ -18,6 +18,12 @@ import java.awt.event.ActionListener;
  * @author Sarita
  * @version 1.1, 26-09-2025
  */
+/**
+ * Class GestorRegistroCliente.
+ */
+/**
+ * Class GestorRegistroCliente.
+ */
 public class GestorRegistroCliente implements ActionListener {
     private FormularioRegistroCliente formulario;
     private VentanaUsuarios ventanaUsuarios;
@@ -45,6 +51,21 @@ public class GestorRegistroCliente implements ActionListener {
      * @param contrasena contraseña a validar
      * @return true si la contraseña es válida, false en caso contrario
      */
+/**
+ * validarContrasena method.
+ * @param contrasena parameter
+ * @return result
+ */
+/**
+ * validarContrasena method.
+ * @param contrasena parameter
+ * @return result
+ */
+/**
+ * validarContrasena method.
+ * @param contrasena parameter
+ * @return result
+ */
     private boolean validarContrasena(String contrasena) {
         String pattern = "^(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$";
         return contrasena.matches(pattern);
@@ -65,6 +86,19 @@ public class GestorRegistroCliente implements ActionListener {
  * @param e evento de acción disparado
  */
     @Override
+/**
+ * actionPerformed method.
+ * @param e parameter
+ * @return result
+ */
+/**
+ * actionPerformed method.
+ * @param e parameter
+ */
+/**
+ * actionPerformed method.
+ * @param e parameter
+ */
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == formulario.getBtnRegistrar()) {
             String pass = formulario.getContrasena();

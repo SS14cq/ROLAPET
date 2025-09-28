@@ -13,8 +13,26 @@ import java.awt.event.ActionListener;
  * @author Sarita
  * @version 1.1, 25-09-2025
  */
+/**
+ * Class FormularioInicioSesion.
+ */
+/**
+ * Class FormularioInicioSesion.
+ */
 public class FormularioInicioSesion extends JFrame {
     // Si el botón 'Atrás' no existe, devolver null para compatibilidad con el controlador
+/**
+ * getBtnAtras method.
+ * @return result
+ */
+/**
+ * getBtnAtras method.
+ * @return result
+ */
+/**
+ * getBtnAtras method.
+ * @return result
+ */
     public JButton getBtnAtras() {
         return null;
     }
@@ -108,6 +126,18 @@ public class FormularioInicioSesion extends JFrame {
      * Devuelve el texto ingresado en el campo de usuario.
      * @return nombre de usuario ingresado
      */
+/**
+ * getUsuario method.
+ * @return result
+ */
+/**
+ * getUsuario method.
+ * @return result
+ */
+/**
+ * getUsuario method.
+ * @return result
+ */
     public String getUsuario() {
         return txtUsuario.getText().trim();
     }
@@ -116,6 +146,18 @@ public class FormularioInicioSesion extends JFrame {
      * Devuelve el texto ingresado en el campo de contraseña.
      * @return contraseña ingresada
      */
+/**
+ * getContrasena method.
+ * @return result
+ */
+/**
+ * getContrasena method.
+ * @return result
+ */
+/**
+ * getContrasena method.
+ * @return result
+ */
     public String getContrasena() {
         return new String(txtContrasena.getPassword());
     }
@@ -127,6 +169,18 @@ public class FormularioInicioSesion extends JFrame {
             btnCancelar.addActionListener(controlador);
      * @return botón ingresar
      */
+/**
+ * getBtnIngresar method.
+ * @return result
+ */
+/**
+ * getBtnIngresar method.
+ * @return result
+ */
+/**
+ * getBtnIngresar method.
+ * @return result
+ */
     public JButton getBtnIngresar() {
         return btnIngresar;
     }
@@ -135,6 +189,18 @@ public class FormularioInicioSesion extends JFrame {
      * Retorna el botón para cancelar, para agregar listeners de eventos.
      * @return botón cancelar
      */
+/**
+ * getBtnCancelar method.
+ * @return result
+ */
+/**
+ * getBtnCancelar method.
+ * @return result
+ */
+/**
+ * getBtnCancelar method.
+ * @return result
+ */
     public JButton getBtnCancelar() {
         return btnCancelar;
     }
@@ -143,6 +209,19 @@ public class FormularioInicioSesion extends JFrame {
      * Asigna el mismo ActionListener controlador a ambos botones de la ventana.
      * @param controlador ActionListener que manejará los eventos
      */
+/**
+ * setControlador method.
+ * @param controlador parameter
+ * @return result
+ */
+/**
+ * setControlador method.
+ * @param controlador parameter
+ */
+/**
+ * setControlador method.
+ * @param controlador parameter
+ */
     public void setControlador(ActionListener controlador) {
         btnIngresar.addActionListener(controlador);
         btnCancelar.addActionListener(e -> {

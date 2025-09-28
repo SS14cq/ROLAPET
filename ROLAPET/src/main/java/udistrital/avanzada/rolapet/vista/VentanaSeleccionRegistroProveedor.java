@@ -7,6 +7,12 @@ package udistrital.avanzada.rolapet.vista;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Class VentanaSeleccionRegistroProveedor.
+ */
+/**
+ * Class VentanaSeleccionRegistroProveedor.
+ */
 public class VentanaSeleccionRegistroProveedor extends JFrame {
 
     private JButton btnRegistrarInsumos;
@@ -72,14 +78,51 @@ public class VentanaSeleccionRegistroProveedor extends JFrame {
         add(panelCentral, BorderLayout.CENTER);
     }
 
+/**
+ * getBtnRegistrarInsumos method.
+ * @return result
+ */
+/**
+ * getBtnRegistrarInsumos method.
+ * @return result
+ */
+/**
+ * getBtnRegistrarInsumos method.
+ * @return result
+ */
     public JButton getBtnRegistrarInsumos() {
         return btnRegistrarInsumos;
     }
 
+/**
+ * getBtnRegistrarServicios method.
+ * @return result
+ */
+/**
+ * getBtnRegistrarServicios method.
+ * @return result
+ */
+/**
+ * getBtnRegistrarServicios method.
+ * @return result
+ */
     public JButton getBtnRegistrarServicios() {
         return btnRegistrarServicios;
     }
 
+/**
+ * setControlador method.
+ * @param controlador parameter
+ * @return result
+ */
+/**
+ * setControlador method.
+ * @param controlador parameter
+ */
+/**
+ * setControlador method.
+ * @param controlador parameter
+ */
     public void setControlador(java.awt.event.ActionListener controlador) {
         btnRegistrarInsumos.addActionListener(controlador);
         btnRegistrarServicios.addActionListener(controlador);

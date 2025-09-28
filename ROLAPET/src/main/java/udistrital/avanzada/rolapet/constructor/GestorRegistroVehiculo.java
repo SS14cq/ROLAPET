@@ -13,35 +13,27 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Clase GestorRegistroVehiculo que controla la lógica para registrar vehículos
- * a través de una interfaz gráfica. Gestiona la interacción con la ventana de registro
- * y usa un controlador para manejar la colección de vehículos.
- * <p>
- * Soporta el registro de vehículos tipo Scooter y Motoeléctrica, validando los campos
- * necesarios y evitando duplicados.
- * </p>
- * 
- * @author Sarita
- * @version 1.2, 25-09-2025
+ * Class GestorRegistroVehiculo.
+ */
+/**
+ * Class GestorRegistroVehiculo.
  */
 public class GestorRegistroVehiculo implements ActionListener {
     private VentanaRegistroVehiculo ventana;
-    private ControladorVehiculo controladorVehiculo;  // Clase encargada de manejar la lista de vehículos
+    private ControladorVehiculo controladorVehiculo;
     private RepositorioUsuarios repositorioUsuarios;
     private Usuario usuarioActual;
 
     /**
-     * Constructor que inicializa la ventana y controlador,
-     * además configura los listeners para los botones de la ventana.
-     * 
-     * @param ventana instancia de la ventana de registro de vehículos
-     * @param controladorVehiculo instancia del controlador de vehículos
+     * Constructor original (mantengo para compatibilidad: crea usuario de prueba)
      */
     public GestorRegistroVehiculo(VentanaRegistroVehiculo ventana, ControladorVehiculo controladorVehiculo) {
         this.ventana = ventana;
         this.controladorVehiculo = controladorVehiculo;
-        // Crear usuario Sofia y repositorio
-        this.usuarioActual = new Usuario("Sofia", "Sofia14@", "Sofia", "Gomez", "1234567890", "sofia@email.com", "3001234567") {};
+
+        // Usuario de prueba (comportamiento original)
+        this.usuarioActual = new Usuario("Sofia", "Sofia14@", "Sofia", "Gomez",
+                "1234567890", "sofia@email.com", "3001234567") {};
         this.repositorioUsuarios = new RepositorioUsuarios();
         repositorioUsuarios.agregarUsuario(usuarioActual);
 
@@ -51,16 +43,47 @@ public class GestorRegistroVehiculo implements ActionListener {
     }
 
     /**
-     * Maneja los eventos de acción generados por los botones de registro y cancelación.
-     * Valida los datos ingresados, crea el vehículo correspondiente y lo registra si no está duplicado.
-     * 
-     * @param e evento de acción disparado
+     * Nueva sobrecarga: recibe el usuario actual y el repositorio para que
+     * los vehículos se asocien correctamente al usuario que está logueado.
      */
+    public GestorRegistroVehiculo(VentanaRegistroVehiculo ventana,
+                                  ControladorVehiculo controladorVehiculo,
+                                  Usuario usuarioActual,
+                                  RepositorioUsuarios repositorioUsuarios) {
+        this.ventana = ventana;
+        this.controladorVehiculo = controladorVehiculo;
+        this.usuarioActual = usuarioActual;
+        this.repositorioUsuarios = (repositorioUsuarios == null) ? new RepositorioUsuarios() : repositorioUsuarios;
+
+        // Asegurarse de que el usuario esté en el repositorio
+        if (this.usuarioActual != null && this.repositorioUsuarios.buscarPorNombreUsuario(this.usuarioActual.getNombreUsuario()) == null) {
+            this.repositorioUsuarios.agregarUsuario(this.usuarioActual);
+        }
+
+        this.ventana.setVisible(true);
+        this.ventana.getBtnRegistrar().addActionListener(this);
+        this.ventana.getBtnCancelar().addActionListener(this);
+    }
+
     @Override
+/**
+ * actionPerformed method.
+ * @param e parameter
+ * @return result
+ */
+/**
+ * actionPerformed method.
+ * @param e parameter
+ */
+/**
+ * actionPerformed method.
+ * @param e parameter
+ */
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
+
         if (source == ventana.getBtnRegistrar()) {
-            // Obtener datos generales
+            // Obtener datos del formulario
             String tipo = ventana.getTipoVehiculo();
             String marca = ventana.getMarca();
             String modelo = ventana.getModelo();
@@ -69,7 +92,7 @@ public class GestorRegistroVehiculo implements ActionListener {
             int potencia = ventana.getPotencia();
             double velocidad = ventana.getVelocidad();
 
-            // Validaciones
+            // Validaciones (idénticas a tu lógica previa)
             if (placa.isEmpty() || !placa.matches("[A-Za-z0-9]{1,6}")) {
                 JOptionPane.showMessageDialog(ventana, "La placa debe contener solo letras y números, máximo 6 caracteres.", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
@@ -82,18 +105,11 @@ public class GestorRegistroVehiculo implements ActionListener {
                 JOptionPane.showMessageDialog(ventana, "El modelo no puede estar vacío.", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            if (autonomia <= 0) {
-                JOptionPane.showMessageDialog(ventana, "La autonomía debe ser un valor positivo.", "Error", JOptionPane.ERROR_MESSAGE);
+            if (autonomia <= 0 || potencia <= 0 || velocidad <= 0) {
+                JOptionPane.showMessageDialog(ventana, "Autonomía, potencia y velocidad deben ser positivos.", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            if (potencia <= 0) {
-                JOptionPane.showMessageDialog(ventana, "La potencia debe ser un valor positivo.", "Error", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-            if (velocidad <= 0) {
-                JOptionPane.showMessageDialog(ventana, "La velocidad debe ser un valor positivo.", "Error", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
+
             // Validar placa duplicada
             for (Vehiculo v : controladorVehiculo.obtenerVehiculos()) {
                 if (v.getPlaca().equalsIgnoreCase(placa)) {
@@ -102,35 +118,41 @@ public class GestorRegistroVehiculo implements ActionListener {
                 }
             }
 
-            // ...ya definido y validado placa arriba, eliminar duplicados...
-            // Validar placa duplicada
-            for (Vehiculo v : controladorVehiculo.obtenerVehiculos()) {
-                if (v.getPlaca().equalsIgnoreCase(placa)) {
-                    JOptionPane.showMessageDialog(ventana, "Ya existe un vehículo con esa placa.", "Error", JOptionPane.ERROR_MESSAGE);
-                    return;
-                }
-            }
-
+            // Crear vehículo según tipo
             Vehiculo vehiculo = null;
             if ("Scooter".equals(tipo)) {
-                boolean llantasOffRoad = ventana.isLlantasOffRoad();
-                boolean iluminacion = ventana.isIluminacionAvanzada();
-                vehiculo = new Scooter(marca, modelo, placa, autonomia, potencia, velocidad, llantasOffRoad, iluminacion);
+                vehiculo = new Scooter(marca, modelo, placa, autonomia, potencia, velocidad,
+                        ventana.isLlantasOffRoad(), ventana.isIluminacionAvanzada());
             } else if ("Motoeléctrica".equals(tipo)) {
-                boolean frenosDisco = ventana.isFrenosDisco();
-                boolean suspension = ventana.isSuspensionAlta();
-                boolean lucesLED = ventana.isLucesLED();
-                boolean alarma = ventana.isAlarmaAntiRobo();
-                vehiculo = new MotoElectrica(marca, modelo, placa, autonomia, potencia, velocidad, frenosDisco, suspension, lucesLED, alarma);
+                vehiculo = new MotoElectrica(marca, modelo, placa, autonomia, potencia, velocidad,
+                        ventana.isFrenosDisco(), ventana.isSuspensionAlta(),
+                        ventana.isLucesLED(), ventana.isAlarmaAntiRobo());
             }
 
             if (vehiculo != null) {
                 if (controladorVehiculo.registrarVehiculo(vehiculo)) {
+                    // --- AÑADIDO: asociar vehículo al usuario actual si existe ---
+                    if (usuarioActual != null) {
+                        usuarioActual.agregarVehiculo(vehiculo);
+                    }
+                    // (opcional) asegurar usuario en repositorio
+                    if (repositorioUsuarios != null && usuarioActual != null &&
+                            repositorioUsuarios.buscarPorNombreUsuario(usuarioActual.getNombreUsuario()) == null) {
+                        repositorioUsuarios.agregarUsuario(usuarioActual);
+                    }
+                    // --------------------------------------------------------
+
                     JOptionPane.showMessageDialog(ventana, "Vehículo registrado exitosamente");
                     ventana.limpiarCampos();
                     ventana.dispose();
-                    // Mostrar ventana de inicio usuario con publicaciones reales y pasar ventana principal
-                    udistrital.avanzada.rolapet.modelo.RepositorioPublicaciones repoPublicacionesGlobal = udistrital.avanzada.rolapet.constructor.GestorSeleccionTipoProveedor.getRepoPublicacionesGlobal();
+
+                    // Obtener repositorio de publicaciones (igual que antes)
+                    udistrital.avanzada.rolapet.modelo.RepositorioPublicaciones repoPublicacionesGlobal =
+                            GestorSeleccionTipoProveedor.getRepoPublicacionesGlobal();
+                    if (repoPublicacionesGlobal == null) {
+                        repoPublicacionesGlobal = new udistrital.avanzada.rolapet.modelo.RepositorioPublicaciones();
+                    }
+
                     JFrame ventanaPrincipal = null;
                     if (ventana instanceof udistrital.avanzada.rolapet.vista.VentanaRegistroVehiculo) {
                         ventanaPrincipal = ((udistrital.avanzada.rolapet.vista.VentanaRegistroVehiculo) ventana).getOwnerWindow();
@@ -145,7 +167,6 @@ public class GestorRegistroVehiculo implements ActionListener {
 
         } else if (source == ventana.getBtnCancelar()) {
             ventana.dispose();
-            // Aquí puedes abrir ventana anterior si aplica
         }
     }
 }

@@ -11,6 +11,12 @@ import udistrital.avanzada.rolapet.modelo.RepositorioUsuarios;
  * @author Sarita
  * @version 1.0, 27-09-2025
  */
+/**
+ * Class VentanaGestionUsuarios.
+ */
+/**
+ * Class VentanaGestionUsuarios.
+ */
 public class VentanaGestionUsuarios extends JFrame {
     private RepositorioUsuarios repositorio;
     private DefaultListModel<String> modeloLista;
@@ -71,6 +77,16 @@ public class VentanaGestionUsuarios extends JFrame {
         btnEliminar.addActionListener(e -> eliminarUsuario());
     }
 
+/**
+ * actualizarLista method.
+ * @return result
+ */
+/**
+ * actualizarLista method.
+ */
+/**
+ * actualizarLista method.
+ */
     private void actualizarLista() {
         modeloLista.clear();
         List<Usuario> usuarios = repositorio.listarUsuarios();
@@ -79,6 +95,16 @@ public class VentanaGestionUsuarios extends JFrame {
         }
     }
 
+/**
+ * agregarUsuario method.
+ * @return result
+ */
+/**
+ * agregarUsuario method.
+ */
+/**
+ * agregarUsuario method.
+ */
     private void agregarUsuario() {
         String nombreUsuario = JOptionPane.showInputDialog(this, "Correo del usuario:");
         if (nombreUsuario != null && !nombreUsuario.trim().isEmpty()) {
@@ -90,6 +116,16 @@ public class VentanaGestionUsuarios extends JFrame {
         }
     }
 
+/**
+ * eliminarUsuario method.
+ * @return result
+ */
+/**
+ * eliminarUsuario method.
+ */
+/**
+ * eliminarUsuario method.
+ */
     private void eliminarUsuario() {
         int idx = listaUsuarios.getSelectedIndex();
         if (idx >= 0) {

@@ -20,9 +20,33 @@ import udistrital.avanzada.rolapet.vista.VentanaCrearPublicacion;
 import udistrital.avanzada.rolapet.constructor.IGestorProveedor;
 import udistrital.avanzada.rolapet.constructor.IGestorPublicacion;
 
+/**
+ * Class GestorVentanaProveedor.
+ */
+/**
+ * Class GestorVentanaProveedor.
+ */
 public class GestorVentanaProveedor implements ActionListener, IGestorProveedor, IGestorPublicacion {
     // Implementación de IGestorProveedor
     @Override
+/**
+ * crearItem method.
+ * @param proveedor parameter
+ * @param item parameter
+ * @return result
+ */
+/**
+ * crearItem method.
+ * @param proveedor parameter
+ * @param item parameter
+ * @return result
+ */
+/**
+ * crearItem method.
+ * @param proveedor parameter
+ * @param item parameter
+ * @return result
+ */
     public boolean crearItem(Proveedor proveedor, Item item) {
         if (proveedor != null && item != null) {
             proveedor.agregarItem(item);
@@ -32,6 +56,24 @@ public class GestorVentanaProveedor implements ActionListener, IGestorProveedor,
     }
 
     @Override
+/**
+ * actualizarItem method.
+ * @param proveedor parameter
+ * @param item parameter
+ * @return result
+ */
+/**
+ * actualizarItem method.
+ * @param proveedor parameter
+ * @param item parameter
+ * @return result
+ */
+/**
+ * actualizarItem method.
+ * @param proveedor parameter
+ * @param item parameter
+ * @return result
+ */
     public boolean actualizarItem(Proveedor proveedor, Item item) {
         // Ejemplo simple: busca por id y reemplaza
         for (int i = 0; i < proveedor.getItems().size(); i++) {
@@ -44,16 +86,61 @@ public class GestorVentanaProveedor implements ActionListener, IGestorProveedor,
     }
 
     @Override
+/**
+ * eliminarItem method.
+ * @param proveedor parameter
+ * @param item parameter
+ * @return result
+ */
+/**
+ * eliminarItem method.
+ * @param proveedor parameter
+ * @param item parameter
+ * @return result
+ */
+/**
+ * eliminarItem method.
+ * @param proveedor parameter
+ * @param item parameter
+ * @return result
+ */
     public boolean eliminarItem(Proveedor proveedor, Item item) {
         return proveedor.getItems().remove(item);
     }
 
     @Override
+/**
+ * listarItems method.
+ * @param proveedor parameter
+ * @return result
+ */
+/**
+ * listarItems method.
+ * @param proveedor parameter
+ * @return result
+ */
+/**
+ * listarItems method.
+ * @param proveedor parameter
+ * @return result
+ */
     public java.util.List<Item> listarItems(Proveedor proveedor) {
         return proveedor.getItems();
     }
 
     @Override
+/**
+ * listarProveedores method.
+ * @return result
+ */
+/**
+ * listarProveedores method.
+ * @return result
+ */
+/**
+ * listarProveedores method.
+ * @return result
+ */
     public java.util.List<Proveedor> listarProveedores() {
         // Aquí podrías acceder a un repositorio global de proveedores
         java.util.List<Proveedor> lista = new java.util.ArrayList<>();
@@ -63,6 +150,24 @@ public class GestorVentanaProveedor implements ActionListener, IGestorProveedor,
 
     // Implementación de IGestorPublicacion
     @Override
+/**
+ * crearPublicacion method.
+ * @param proveedor parameter
+ * @param publicacion parameter
+ * @return result
+ */
+/**
+ * crearPublicacion method.
+ * @param proveedor parameter
+ * @param publicacion parameter
+ * @return result
+ */
+/**
+ * crearPublicacion method.
+ * @param proveedor parameter
+ * @param publicacion parameter
+ * @return result
+ */
     public boolean crearPublicacion(Proveedor proveedor, udistrital.avanzada.rolapet.modelo.Publicacion publicacion) {
         if (proveedor != null && publicacion != null) {
             proveedor.agregarPublicacion(publicacion);
@@ -73,6 +178,24 @@ public class GestorVentanaProveedor implements ActionListener, IGestorProveedor,
     }
 
     @Override
+/**
+ * actualizarPublicacion method.
+ * @param proveedor parameter
+ * @param publicacion parameter
+ * @return result
+ */
+/**
+ * actualizarPublicacion method.
+ * @param proveedor parameter
+ * @param publicacion parameter
+ * @return result
+ */
+/**
+ * actualizarPublicacion method.
+ * @param proveedor parameter
+ * @param publicacion parameter
+ * @return result
+ */
     public boolean actualizarPublicacion(Proveedor proveedor, udistrital.avanzada.rolapet.modelo.Publicacion publicacion) {
         // Ejemplo simple: busca por título y reemplaza
         for (int i = 0; i < proveedor.getPublicaciones().size(); i++) {
@@ -85,17 +208,62 @@ public class GestorVentanaProveedor implements ActionListener, IGestorProveedor,
     }
 
     @Override
+/**
+ * eliminarPublicacion method.
+ * @param proveedor parameter
+ * @param publicacion parameter
+ * @return result
+ */
+/**
+ * eliminarPublicacion method.
+ * @param proveedor parameter
+ * @param publicacion parameter
+ * @return result
+ */
+/**
+ * eliminarPublicacion method.
+ * @param proveedor parameter
+ * @param publicacion parameter
+ * @return result
+ */
     public boolean eliminarPublicacion(Proveedor proveedor, udistrital.avanzada.rolapet.modelo.Publicacion publicacion) {
         proveedor.getPublicaciones().remove(publicacion);
         return repoPublicaciones.listarPublicaciones().remove(publicacion);
     }
 
     @Override
+/**
+ * listarPublicaciones method.
+ * @param proveedor parameter
+ * @return result
+ */
+/**
+ * listarPublicaciones method.
+ * @param proveedor parameter
+ * @return result
+ */
+/**
+ * listarPublicaciones method.
+ * @param proveedor parameter
+ * @return result
+ */
     public java.util.List<udistrital.avanzada.rolapet.modelo.Publicacion> listarPublicaciones(Proveedor proveedor) {
         return proveedor.getPublicaciones();
     }
 
     @Override
+/**
+ * listarTodasPublicaciones method.
+ * @return result
+ */
+/**
+ * listarTodasPublicaciones method.
+ * @return result
+ */
+/**
+ * listarTodasPublicaciones method.
+ * @return result
+ */
     public java.util.List<udistrital.avanzada.rolapet.modelo.Publicacion> listarTodasPublicaciones() {
         return repoPublicaciones.listarPublicaciones();
     }
@@ -113,6 +281,19 @@ public class GestorVentanaProveedor implements ActionListener, IGestorProveedor,
     }
 
     @Override
+/**
+ * actionPerformed method.
+ * @param e parameter
+ * @return result
+ */
+/**
+ * actionPerformed method.
+ * @param e parameter
+ */
+/**
+ * actionPerformed method.
+ * @param e parameter
+ */
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
 

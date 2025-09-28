@@ -13,6 +13,12 @@ import udistrital.avanzada.rolapet.modelo.Usuario;
  * @author sarita
  * @version 1.3, 25-09-2025
  */
+/**
+ * Class ControladorUsuario.
+ */
+/**
+ * Class ControladorUsuario.
+ */
 public class ControladorUsuario {
 
     /**
@@ -45,6 +51,21 @@ public class ControladorUsuario {
      * @param usuario Usuario a registrar.
      * @return true si el usuario se registró correctamente; false si ya existe por nombre o cédula.
      */
+/**
+ * registrarUsuario method.
+ * @param usuario parameter
+ * @return result
+ */
+/**
+ * registrarUsuario method.
+ * @param usuario parameter
+ * @return result
+ */
+/**
+ * registrarUsuario method.
+ * @param usuario parameter
+ * @return result
+ */
     public boolean registrarUsuario(Usuario usuario) {
         if (buscarPorNombreUsuario(usuario.getNombreUsuario()) != null) {
             return false; // Ya existe usuario con ese nombre
@@ -62,6 +83,21 @@ public class ControladorUsuario {
      * @param nombreUsuario Nombre de usuario a buscar.
      * @return Usuario encontrado o null si no existe.
      */
+/**
+ * buscarPorNombreUsuario method.
+ * @param nombreUsuario parameter
+ * @return result
+ */
+/**
+ * buscarPorNombreUsuario method.
+ * @param nombreUsuario parameter
+ * @return result
+ */
+/**
+ * buscarPorNombreUsuario method.
+ * @param nombreUsuario parameter
+ * @return result
+ */
     public Usuario buscarPorNombreUsuario(String nombreUsuario) {
         for (Usuario u : usuarios) {
             if (u.getNombreUsuario().equalsIgnoreCase(nombreUsuario)) {
@@ -77,6 +113,21 @@ public class ControladorUsuario {
      * @param cedula Cédula a buscar.
      * @return Usuario encontrado o null si no existe.
      */
+/**
+ * buscarPorCedula method.
+ * @param cedula parameter
+ * @return result
+ */
+/**
+ * buscarPorCedula method.
+ * @param cedula parameter
+ * @return result
+ */
+/**
+ * buscarPorCedula method.
+ * @param cedula parameter
+ * @return result
+ */
     public Usuario buscarPorCedula(String cedula) {
         for (Usuario u : usuarios) {
             if (u.getCedula().equalsIgnoreCase(cedula)) {
@@ -91,6 +142,18 @@ public class ControladorUsuario {
      * 
      * @return Lista de usuarios.
      */
+/**
+ * obtenerUsuarios method.
+ * @return result
+ */
+/**
+ * obtenerUsuarios method.
+ * @return result
+ */
+/**
+ * obtenerUsuarios method.
+ * @return result
+ */
     public List<Usuario> obtenerUsuarios() {
         return usuarios;
     }

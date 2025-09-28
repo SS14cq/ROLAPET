@@ -8,6 +8,12 @@ package udistrital.avanzada.rolapet.modelo;
  * @author Sarita
  * @version 1.1, 25-09-2025
  */
+/**
+ * Class Vehiculo.
+ */
+/**
+ * Class Vehiculo.
+ */
 public class Vehiculo {
     private String marca;
     private String modelo;
@@ -36,22 +42,172 @@ public class Vehiculo {
 
     // Getters y Setters
 
+/**
+ * getMarca method.
+ * @return result
+ */
+/**
+ * getMarca method.
+ * @return result
+ */
+/**
+ * getMarca method.
+ * @return result
+ */
     public String getMarca() { return marca; }
+/**
+ * setMarca method.
+ * @param marca parameter
+ * @return result
+ */
+/**
+ * setMarca method.
+ * @param marca parameter
+ */
+/**
+ * setMarca method.
+ * @param marca parameter
+ */
     public void setMarca(String marca) { this.marca = marca; }
 
+/**
+ * getModelo method.
+ * @return result
+ */
+/**
+ * getModelo method.
+ * @return result
+ */
+/**
+ * getModelo method.
+ * @return result
+ */
     public String getModelo() { return modelo; }
+/**
+ * setModelo method.
+ * @param modelo parameter
+ * @return result
+ */
+/**
+ * setModelo method.
+ * @param modelo parameter
+ */
+/**
+ * setModelo method.
+ * @param modelo parameter
+ */
     public void setModelo(String modelo) { this.modelo = modelo; }
 
+/**
+ * getPlaca method.
+ * @return result
+ */
+/**
+ * getPlaca method.
+ * @return result
+ */
+/**
+ * getPlaca method.
+ * @return result
+ */
     public String getPlaca() { return placa; }
+/**
+ * setPlaca method.
+ * @param placa parameter
+ * @return result
+ */
+/**
+ * setPlaca method.
+ * @param placa parameter
+ */
+/**
+ * setPlaca method.
+ * @param placa parameter
+ */
     public void setPlaca(String placa) { this.placa = placa; }
 
+/**
+ * getAutonomiaKm method.
+ * @return result
+ */
+/**
+ * getAutonomiaKm method.
+ * @return result
+ */
+/**
+ * getAutonomiaKm method.
+ * @return result
+ */
     public double getAutonomiaKm() { return autonomiaKm; }
+/**
+ * setAutonomiaKm method.
+ * @param autonomiaKm parameter
+ * @return result
+ */
+/**
+ * setAutonomiaKm method.
+ * @param autonomiaKm parameter
+ */
+/**
+ * setAutonomiaKm method.
+ * @param autonomiaKm parameter
+ */
     public void setAutonomiaKm(double autonomiaKm) { this.autonomiaKm = autonomiaKm; }
 
+/**
+ * getPotenciaNominalW method.
+ * @return result
+ */
+/**
+ * getPotenciaNominalW method.
+ * @return result
+ */
+/**
+ * getPotenciaNominalW method.
+ * @return result
+ */
     public int getPotenciaNominalW() { return potenciaNominalW; }
+/**
+ * setPotenciaNominalW method.
+ * @param potenciaNominalW parameter
+ * @return result
+ */
+/**
+ * setPotenciaNominalW method.
+ * @param potenciaNominalW parameter
+ */
+/**
+ * setPotenciaNominalW method.
+ * @param potenciaNominalW parameter
+ */
     public void setPotenciaNominalW(int potenciaNominalW) { this.potenciaNominalW = potenciaNominalW; }
 
+/**
+ * getVelocidadMaxKmh method.
+ * @return result
+ */
+/**
+ * getVelocidadMaxKmh method.
+ * @return result
+ */
+/**
+ * getVelocidadMaxKmh method.
+ * @return result
+ */
     public double getVelocidadMaxKmh() { return velocidadMaxKmh; }
+/**
+ * setVelocidadMaxKmh method.
+ * @param velocidadMaxKmh parameter
+ * @return result
+ */
+/**
+ * setVelocidadMaxKmh method.
+ * @param velocidadMaxKmh parameter
+ */
+/**
+ * setVelocidadMaxKmh method.
+ * @param velocidadMaxKmh parameter
+ */
     public void setVelocidadMaxKmh(double velocidadMaxKmh) { this.velocidadMaxKmh = velocidadMaxKmh; }
 
     /**
@@ -59,6 +215,18 @@ public class Vehiculo {
      * 
      * @return descripción formateada del vehículo
      */
+/**
+ * getDescripcion method.
+ * @return result
+ */
+/**
+ * getDescripcion method.
+ * @return result
+ */
+/**
+ * getDescripcion method.
+ * @return result
+ */
     public String getDescripcion() {
         return String.format("Marca: %s, Modelo: %s, Placa: %s, Autonomía: %.1f km, Potencia: %d W, Velocidad máxima: %.1f km/h",
                 marca, modelo, placa, autonomiaKm, potenciaNominalW, velocidadMaxKmh);

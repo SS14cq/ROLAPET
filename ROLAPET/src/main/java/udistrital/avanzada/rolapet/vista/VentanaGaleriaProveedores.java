@@ -9,8 +9,33 @@ import java.awt.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Class VentanaGaleriaProveedores.
+ */
+/**
+ * Class VentanaGaleriaProveedores.
+ */
 public class VentanaGaleriaProveedores extends JFrame {
     // Método para cargar proveedores desde una lista de Proveedor
+/**
+ * cargarProveedoresDirecto method.
+ * @param proveedores parameter
+ * @param tipo parameter
+ * @param busqueda parameter
+ * @return result
+ */
+/**
+ * cargarProveedoresDirecto method.
+ * @param proveedores parameter
+ * @param tipo parameter
+ * @param busqueda parameter
+ */
+/**
+ * cargarProveedoresDirecto method.
+ * @param proveedores parameter
+ * @param tipo parameter
+ * @param busqueda parameter
+ */
     private void cargarProveedoresDirecto(List<Proveedor> proveedores, String tipo, String busqueda) {
         modeloTabla.setRowCount(0);
         List<Proveedor> filtrados = proveedores.stream()
@@ -146,6 +171,25 @@ public class VentanaGaleriaProveedores extends JFrame {
         });
     }
 
+/**
+ * cargarProveedores method.
+ * @param usuarios parameter
+ * @param tipo parameter
+ * @param busqueda parameter
+ * @return result
+ */
+/**
+ * cargarProveedores method.
+ * @param usuarios parameter
+ * @param tipo parameter
+ * @param busqueda parameter
+ */
+/**
+ * cargarProveedores method.
+ * @param usuarios parameter
+ * @param tipo parameter
+ * @param busqueda parameter
+ */
     private void cargarProveedores(List<udistrital.avanzada.rolapet.modelo.Usuario> usuarios, String tipo, String busqueda) {
         modeloTabla.setRowCount(0);
         List<Proveedor> proveedores = usuarios.stream()
@@ -160,6 +204,19 @@ public class VentanaGaleriaProveedores extends JFrame {
         }
     }
 
+/**
+ * setAtrasListener method.
+ * @param listener parameter
+ * @return result
+ */
+/**
+ * setAtrasListener method.
+ * @param listener parameter
+ */
+/**
+ * setAtrasListener method.
+ * @param listener parameter
+ */
     public void setAtrasListener(java.awt.event.ActionListener listener) {
         btnAtras.addActionListener(listener);
     }

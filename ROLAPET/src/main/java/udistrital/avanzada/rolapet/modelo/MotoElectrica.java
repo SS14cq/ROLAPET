@@ -8,6 +8,12 @@ package udistrital.avanzada.rolapet.modelo;
  * @author Sarita
  * @version 1.1, 25-09-2025
  */
+/**
+ * Class MotoElectrica.
+ */
+/**
+ * Class MotoElectrica.
+ */
 public class MotoElectrica extends Vehiculo {
     private boolean frenosDisco;
     private boolean suspensionAltaCalidad;
@@ -37,16 +43,116 @@ public class MotoElectrica extends Vehiculo {
         this.alarmaAntiRobo = alarmaAntiRobo;
     }
 
+/**
+ * isFrenosDisco method.
+ * @return result
+ */
+/**
+ * isFrenosDisco method.
+ * @return result
+ */
+/**
+ * isFrenosDisco method.
+ * @return result
+ */
     public boolean isFrenosDisco() { return frenosDisco; }
+/**
+ * setFrenosDisco method.
+ * @param frenosDisco parameter
+ * @return result
+ */
+/**
+ * setFrenosDisco method.
+ * @param frenosDisco parameter
+ */
+/**
+ * setFrenosDisco method.
+ * @param frenosDisco parameter
+ */
     public void setFrenosDisco(boolean frenosDisco) { this.frenosDisco = frenosDisco; }
 
+/**
+ * isSuspensionAltaCalidad method.
+ * @return result
+ */
+/**
+ * isSuspensionAltaCalidad method.
+ * @return result
+ */
+/**
+ * isSuspensionAltaCalidad method.
+ * @return result
+ */
     public boolean isSuspensionAltaCalidad() { return suspensionAltaCalidad; }
+/**
+ * setSuspensionAltaCalidad method.
+ * @param suspensionAltaCalidad parameter
+ * @return result
+ */
+/**
+ * setSuspensionAltaCalidad method.
+ * @param suspensionAltaCalidad parameter
+ */
+/**
+ * setSuspensionAltaCalidad method.
+ * @param suspensionAltaCalidad parameter
+ */
     public void setSuspensionAltaCalidad(boolean suspensionAltaCalidad) { this.suspensionAltaCalidad = suspensionAltaCalidad; }
 
+/**
+ * isLucesLED method.
+ * @return result
+ */
+/**
+ * isLucesLED method.
+ * @return result
+ */
+/**
+ * isLucesLED method.
+ * @return result
+ */
     public boolean isLucesLED() { return lucesLED; }
+/**
+ * setLucesLED method.
+ * @param lucesLED parameter
+ * @return result
+ */
+/**
+ * setLucesLED method.
+ * @param lucesLED parameter
+ */
+/**
+ * setLucesLED method.
+ * @param lucesLED parameter
+ */
     public void setLucesLED(boolean lucesLED) { this.lucesLED = lucesLED; }
 
+/**
+ * isAlarmaAntiRobo method.
+ * @return result
+ */
+/**
+ * isAlarmaAntiRobo method.
+ * @return result
+ */
+/**
+ * isAlarmaAntiRobo method.
+ * @return result
+ */
     public boolean isAlarmaAntiRobo() { return alarmaAntiRobo; }
+/**
+ * setAlarmaAntiRobo method.
+ * @param alarmaAntiRobo parameter
+ * @return result
+ */
+/**
+ * setAlarmaAntiRobo method.
+ * @param alarmaAntiRobo parameter
+ */
+/**
+ * setAlarmaAntiRobo method.
+ * @param alarmaAntiRobo parameter
+ */
     public void setAlarmaAntiRobo(boolean alarmaAntiRobo) { this.alarmaAntiRobo = alarmaAntiRobo; }
 
     /**
@@ -56,6 +162,18 @@ public class MotoElectrica extends Vehiculo {
      * @return descripción detallada del vehículo
      */
     @Override
+/**
+ * getDescripcion method.
+ * @return result
+ */
+/**
+ * getDescripcion method.
+ * @return result
+ */
+/**
+ * getDescripcion method.
+ * @return result
+ */
     public String getDescripcion() {
         return super.getDescripcion() +
                 ", Frenos de disco: " + (frenosDisco ? "Sí" : "No") +

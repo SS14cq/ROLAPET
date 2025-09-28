@@ -12,12 +12,30 @@ package udistrital.avanzada.rolapet.modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class Usuario.
+ */
+/**
+ * Class Usuario.
+ */
 public abstract class Usuario extends Persona {
     private List<Vehiculo> vehiculos = new ArrayList<>();
 
     /**
      * Devuelve la lista de vehículos registrados por el usuario.
      */
+/**
+ * getVehiculos method.
+ * @return result
+ */
+/**
+ * getVehiculos method.
+ * @return result
+ */
+/**
+ * getVehiculos method.
+ * @return result
+ */
     public List<Vehiculo> getVehiculos() {
         return vehiculos;
     }
@@ -25,6 +43,19 @@ public abstract class Usuario extends Persona {
     /**
      * Agrega un vehículo al usuario.
      */
+/**
+ * agregarVehiculo method.
+ * @param vehiculo parameter
+ * @return result
+ */
+/**
+ * agregarVehiculo method.
+ * @param vehiculo parameter
+ */
+/**
+ * agregarVehiculo method.
+ * @param vehiculo parameter
+ */
     public void agregarVehiculo(Vehiculo vehiculo) {
         if (vehiculo != null && !vehiculos.contains(vehiculo)) {
             vehiculos.add(vehiculo);
@@ -36,6 +67,18 @@ public abstract class Usuario extends Persona {
     /**
      * Devuelve la lista de amigos del usuario.
      */
+/**
+ * getAmigos method.
+ * @return result
+ */
+/**
+ * getAmigos method.
+ * @return result
+ */
+/**
+ * getAmigos method.
+ * @return result
+ */
     public List<Usuario> getAmigos() {
         return amigos;
     }
@@ -43,6 +86,21 @@ public abstract class Usuario extends Persona {
     /**
      * Agrega un amigo al usuario si no está ya en la lista.
      */
+/**
+ * agregarAmigo method.
+ * @param amigo parameter
+ * @return result
+ */
+/**
+ * agregarAmigo method.
+ * @param amigo parameter
+ * @return result
+ */
+/**
+ * agregarAmigo method.
+ * @param amigo parameter
+ * @return result
+ */
     public boolean agregarAmigo(Usuario amigo) {
         if (amigo != null && !amigos.contains(amigo) && !amigo.equals(this)) {
             amigos.add(amigo);
@@ -72,6 +130,18 @@ public abstract class Usuario extends Persona {
      * Devuelve el nombre de usuario.
      * @return nombre de usuario
      */
+/**
+ * getNombreUsuario method.
+ * @return result
+ */
+/**
+ * getNombreUsuario method.
+ * @return result
+ */
+/**
+ * getNombreUsuario method.
+ * @return result
+ */
     public String getNombreUsuario() {
         return nombreUsuario;
     }
@@ -80,6 +150,19 @@ public abstract class Usuario extends Persona {
      * Establece el nombre de usuario.
      * @param nombreUsuario nombre de usuario a asignar
      */
+/**
+ * setNombreUsuario method.
+ * @param nombreUsuario parameter
+ * @return result
+ */
+/**
+ * setNombreUsuario method.
+ * @param nombreUsuario parameter
+ */
+/**
+ * setNombreUsuario method.
+ * @param nombreUsuario parameter
+ */
     public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
     }
@@ -88,6 +171,18 @@ public abstract class Usuario extends Persona {
      * Devuelve la contraseña del usuario.
      * @return contraseña
      */
+/**
+ * getContrasena method.
+ * @return result
+ */
+/**
+ * getContrasena method.
+ * @return result
+ */
+/**
+ * getContrasena method.
+ * @return result
+ */
     public String getContrasena() {
         return contrasena;
     }
@@ -96,6 +191,19 @@ public abstract class Usuario extends Persona {
      * Establece la contraseña del usuario.
      * @param contrasena contraseña a asignar
      */
+/**
+ * setContrasena method.
+ * @param contrasena parameter
+ * @return result
+ */
+/**
+ * setContrasena method.
+ * @param contrasena parameter
+ */
+/**
+ * setContrasena method.
+ * @param contrasena parameter
+ */
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }

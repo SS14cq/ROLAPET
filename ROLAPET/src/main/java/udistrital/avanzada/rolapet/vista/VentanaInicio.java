@@ -12,9 +12,27 @@ import java.awt.event.ActionListener;
  * @author Sarita
  * @version 1.1, 21-09-2025
  */
+/**
+ * Class VentanaInicio.
+ */
+/**
+ * Class VentanaInicio.
+ */
 public class VentanaInicio extends JFrame {
+/**
+ * JButton method.
+ * @param "Usuarios" parameter
+ */
     public JButton btnUsuarios = new JButton("Usuarios");
+/**
+ * JButton method.
+ * @param "Administradores" parameter
+ */
     public JButton btnAdministradores = new JButton("Administradores");
+/**
+ * JButton method.
+ * @param "Proveedores" parameter
+ */
     public JButton btnProveedores = new JButton("Proveedores");
 
     /**
@@ -86,6 +104,19 @@ public class VentanaInicio extends JFrame {
      * 
      * @param controlador ActionListener que manejará los eventos de los botones
      */
+/**
+ * setControlador method.
+ * @param controlador parameter
+ * @return result
+ */
+/**
+ * setControlador method.
+ * @param controlador parameter
+ */
+/**
+ * setControlador method.
+ * @param controlador parameter
+ */
     public void setControlador(ActionListener controlador) {
         btnUsuarios.addActionListener(controlador);
         btnAdministradores.addActionListener(controlador);
