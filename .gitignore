@@ -1,0 +1,9 @@
+# Ignorar archivos compilados
+*.class
+
+# Ignorar carpeta de Maven
+target/
+
+# Ignorar archivos de sistema
+*.log
+*.DS_Store
