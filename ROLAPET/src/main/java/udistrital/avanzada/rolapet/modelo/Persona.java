@@ -3,10 +3,10 @@ package udistrital.avanzada.rolapet.modelo;
 /**
  * Representa una persona con datos básicos de identificación y contacto.
  * Contiene los atributos nombre, apellido, cédula, correo y celular.
- * <p>
+ * 
  * MODIFICACIÓN: Se agregaron validaciones en los setters de cédula, correo y celular
  * para asegurar formatos correctos y lanzar IllegalArgumentException en caso de datos inválidos.
- * </p>
+ * 
  * 
  * @author Sarita
  * @version 1.2, 26-09-2025

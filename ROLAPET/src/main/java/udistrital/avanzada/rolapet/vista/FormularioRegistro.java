@@ -236,4 +236,13 @@ import java.awt.*;
         txtNombreUsuario.setText("");
         txtContrasena.setText("");
     }
+
+    /**
+     *
+     * @param componente
+     * @param mensaje
+     */
+    public void mostrarJOption(Component componente, String mensaje){
+        
+    }
 }

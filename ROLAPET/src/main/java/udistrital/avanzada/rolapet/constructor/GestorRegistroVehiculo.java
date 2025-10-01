@@ -25,7 +25,8 @@ public class GestorRegistroVehiculo implements ActionListener {
     private Usuario usuarioActual;
 
     /**
-     * Constructor original (mantengo para compatibilidad: crea usuario de prueba)
+     * Constructor original (mantengo para compatibilidad: crea usuario de
+     * prueba)
      */
     public GestorRegistroVehiculo(VentanaRegistroVehiculo ventana, ControladorVehiculo controladorVehiculo) {
         this.ventana = ventana;
@@ -33,7 +34,8 @@ public class GestorRegistroVehiculo implements ActionListener {
 
         // Usuario de prueba (comportamiento original)
         this.usuarioActual = new Usuario("Sofia", "Sofia14@", "Sofia", "Gomez",
-                "1234567890", "sofia@email.com", "3001234567") {};
+                "1234567890", "sofia@email.com", "3001234567") {
+        };
         this.repositorioUsuarios = new RepositorioUsuarios();
         repositorioUsuarios.agregarUsuario(usuarioActual);
 
@@ -43,13 +45,13 @@ public class GestorRegistroVehiculo implements ActionListener {
     }
 
     /**
-     * Nueva sobrecarga: recibe el usuario actual y el repositorio para que
-     * los vehículos se asocien correctamente al usuario que está logueado.
+     * Nueva sobrecarga: recibe el usuario actual y el repositorio para que los
+     * vehículos se asocien correctamente al usuario que está logueado.
      */
     public GestorRegistroVehiculo(VentanaRegistroVehiculo ventana,
-                                  ControladorVehiculo controladorVehiculo,
-                                  Usuario usuarioActual,
-                                  RepositorioUsuarios repositorioUsuarios) {
+            ControladorVehiculo controladorVehiculo,
+            Usuario usuarioActual,
+            RepositorioUsuarios repositorioUsuarios) {
         this.ventana = ventana;
         this.controladorVehiculo = controladorVehiculo;
         this.usuarioActual = usuarioActual;
@@ -66,19 +68,19 @@ public class GestorRegistroVehiculo implements ActionListener {
     }
 
     @Override
-/**
- * actionPerformed method.
- * @param e parameter
- * @return result
- */
-/**
- * actionPerformed method.
- * @param e parameter
- */
-/**
- * actionPerformed method.
- * @param e parameter
- */
+    /**
+     * actionPerformed method.
+     * @param e parameter
+     * @return result
+     */
+    /**
+     * actionPerformed method.
+     * @param e parameter
+     */
+    /**
+     * actionPerformed method.
+     * @param e parameter
+     */
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
 
@@ -94,26 +96,26 @@ public class GestorRegistroVehiculo implements ActionListener {
 
             // Validaciones (idénticas a tu lógica previa)
             if (placa.isEmpty() || !placa.matches("[A-Za-z0-9]{1,6}")) {
-                JOptionPane.showMessageDialog(ventana, "La placa debe contener solo letras y números, máximo 6 caracteres.", "Error", JOptionPane.ERROR_MESSAGE);
+                ventana.mostrarJOptionError(ventana, "La placa debe contener solo letras y números, máximo 6 caracteres.");
                 return;
             }
             if (marca.isEmpty()) {
-                JOptionPane.showMessageDialog(ventana, "La marca no puede estar vacía.", "Error", JOptionPane.ERROR_MESSAGE);
+                ventana.mostrarJOptionError(ventana, "La marca no puede estar vacía.");
                 return;
             }
             if (modelo.isEmpty()) {
-                JOptionPane.showMessageDialog(ventana, "El modelo no puede estar vacío.", "Error", JOptionPane.ERROR_MESSAGE);
+                ventana.mostrarJOptionError(ventana, "El modelo no puede estar vacío.");
                 return;
             }
             if (autonomia <= 0 || potencia <= 0 || velocidad <= 0) {
-                JOptionPane.showMessageDialog(ventana, "Autonomía, potencia y velocidad deben ser positivos.", "Error", JOptionPane.ERROR_MESSAGE);
+                ventana.mostrarJOptionError(ventana, "Autonomía, potencia y velocidad deben ser positivos.");
                 return;
             }
 
             // Validar placa duplicada
             for (Vehiculo v : controladorVehiculo.obtenerVehiculos()) {
                 if (v.getPlaca().equalsIgnoreCase(placa)) {
-                    JOptionPane.showMessageDialog(ventana, "Ya existe un vehículo con esa placa.", "Error", JOptionPane.ERROR_MESSAGE);
+                    ventana.mostrarJOptionError(ventana, "Ya existe un vehículo con esa placa.");
                     return;
                 }
             }
@@ -135,20 +137,20 @@ public class GestorRegistroVehiculo implements ActionListener {
                     if (usuarioActual != null) {
                         usuarioActual.agregarVehiculo(vehiculo);
                     }
-                    // (opcional) asegurar usuario en repositorio
-                    if (repositorioUsuarios != null && usuarioActual != null &&
-                            repositorioUsuarios.buscarPorNombreUsuario(usuarioActual.getNombreUsuario()) == null) {
-                        repositorioUsuarios.agregarUsuario(usuarioActual);
-                    }
+//                    // (opcional) asegurar usuario en repositorio
+//                    if (repositorioUsuarios != null && usuarioActual != null &&
+//                            repositorioUsuarios.buscarPorNombreUsuario(usuarioActual.getNombreUsuario()) == null) {
+//                        repositorioUsuarios.agregarUsuario(usuarioActual);
+//                    }
                     // --------------------------------------------------------
 
-                    JOptionPane.showMessageDialog(ventana, "Vehículo registrado exitosamente");
+                    ventana.mostrarJOption(ventana, "Vehículo registrado exitosamente");
                     ventana.limpiarCampos();
                     ventana.dispose();
 
                     // Obtener repositorio de publicaciones (igual que antes)
-                    udistrital.avanzada.rolapet.modelo.RepositorioPublicaciones repoPublicacionesGlobal =
-                            GestorSeleccionTipoProveedor.getRepoPublicacionesGlobal();
+                    udistrital.avanzada.rolapet.modelo.RepositorioPublicaciones repoPublicacionesGlobal
+                            = GestorSeleccionTipoProveedor.getRepoPublicacionesGlobal();
                     if (repoPublicacionesGlobal == null) {
                         repoPublicacionesGlobal = new udistrital.avanzada.rolapet.modelo.RepositorioPublicaciones();
                     }
@@ -161,7 +163,7 @@ public class GestorRegistroVehiculo implements ActionListener {
                     new GestorVentanaInicioUsuario(ventanaInicioUsuario, usuarioActual, repositorioUsuarios, repoPublicacionesGlobal, ventanaPrincipal);
                     ventanaInicioUsuario.setVisible(true);
                 } else {
-                    JOptionPane.showMessageDialog(ventana, "Ya existe un vehículo con esos datos", "Error", JOptionPane.ERROR_MESSAGE);
+                    ventana.mostrarJOptionError(ventana, "Ya existe un vehículo con esos datos");
                 }
             }
 

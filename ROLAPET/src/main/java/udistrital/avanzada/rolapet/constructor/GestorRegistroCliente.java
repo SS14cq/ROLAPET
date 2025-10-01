@@ -103,7 +103,7 @@ public class GestorRegistroCliente implements ActionListener {
         if (e.getSource() == formulario.getBtnRegistrar()) {
             String pass = formulario.getContrasena();
             if (!validarContrasena(pass)) {
-                JOptionPane.showMessageDialog(formulario,
+                formulario.mostrarJOption(formulario,
                         "La contraseña debe tener mínimo 8 caracteres, al menos una letra mayúscula, un número y un carácter especial.",
                         "Error de validación",
                         JOptionPane.ERROR_MESSAGE);
@@ -122,10 +122,10 @@ public class GestorRegistroCliente implements ActionListener {
                 );
 
                 if (controladorUsuario.registrarUsuario(nuevoCliente)) {
-                    JOptionPane.showMessageDialog(formulario, "Registro exitoso");
+                    JOptionPane.showMessageDialog(formulario, "Registro exitoso",null,2);
                     formulario.limpiarCampos();
                 } else {
-                    JOptionPane.showMessageDialog(formulario, "Nombre de usuario o cédula ya existentes");
+                    JOptionPane.showMessageDialog(formulario, "Nombre de usuario o cédula ya existentes", null,0);
                 }
             } catch (IllegalArgumentException ex) {
                 JOptionPane.showMessageDialog(formulario,

@@ -88,17 +88,17 @@ public class GestorVentanaUsuarios implements ActionListener {
 
             Usuario u = controladorUsuario.buscarPorNombreUsuario(usuario);
             if (u != null && u.getContrasena().equals(contrasena)) {
-                JOptionPane.showMessageDialog(formularioInicioSesion, "Inicio de sesión exitoso");
-                formularioInicioSesion.dispose();
+                ventanaInicio.mostrarJOption(formularioInicioSesion, "Inicio de sesión exitoso");
+                formularioInicioSesion.setVisible(false);
                 ventanaUsuarios.dispose();
                 ventanaInicio.dispose();
-
+                
                 VentanaRegistroVehiculo ventanaRegistro = new VentanaRegistroVehiculo();
                 ControladorVehiculo controladorVehiculo = new ControladorVehiculo();
                 new GestorRegistroVehiculo(ventanaRegistro, controladorVehiculo);
-
+                
             } else {
-                JOptionPane.showMessageDialog(formularioInicioSesion, "Usuario o contraseña incorrectos");
+                ventanaInicio.mostrarJOption(formularioInicioSesion, "Usuario o contraseña incorrectos");
             }
             return;
         }
@@ -124,5 +124,9 @@ public class GestorVentanaUsuarios implements ActionListener {
             ventanaUsuarios.dispose();
             ventanaInicio.setVisible(true);
         }
+    }
+    
+    public void ventanaFormularioInicioSecion(){
+        formularioInicioSesion.setVisible(true);
     }
 }

@@ -130,10 +130,10 @@ public class FormularioRegistroCliente extends JFrame {
         panelBotones.add(btnAtras);
 
         add(panelBotones, BorderLayout.SOUTH);
-
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        
         pack();
         setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
 /**
@@ -299,5 +299,8 @@ public class FormularioRegistroCliente extends JFrame {
     public void setControlador(ActionListener controlador) {
         btnRegistrar.addActionListener(controlador);
         btnAtras.addActionListener(controlador);
+    }
+    public void mostrarJOption(Component componente, String mensaje, String title, int numero){
+        JOptionPane.showMessageDialog(rootPane, this, title, numero);
     }
 }

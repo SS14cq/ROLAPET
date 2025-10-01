@@ -93,6 +93,7 @@ public class VentanaUsuarios extends JFrame {
 
         getContentPane().add(panelBotones);
         setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
     /**
