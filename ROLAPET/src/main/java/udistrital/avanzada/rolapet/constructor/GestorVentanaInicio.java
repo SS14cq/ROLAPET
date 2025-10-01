@@ -8,19 +8,20 @@ import udistrital.avanzada.rolapet.vista.FormularioInicioSesionAdministrador;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import udistrital.avanzada.rolapet.vista.VentanaInicioUsuario;
 /**
  * Clase que gestiona los eventos de la ventana de inicio de la aplicación.
  * 
- * <p>Permite la navegación hacia las diferentes secciones según el botón seleccionado:
+ * Permite la navegación hacia las diferentes secciones según el botón seleccionado:
  * usuarios, proveedores o administradores. Mantiene una instancia compartida
  * de proveedores para que la información sea consistente en toda la aplicación.</p>
  * 
- * <p><b>Historial de cambios:</b></p>
- * <ul>
- *   <li>2025-09-25 - Versión 1.2 - Modificada por Sarita: implementación inicial de flujo.</li>
- *   <li>2025-09-26 - Versión 1.3 - Modificada por Juan: agregado manejo de acción manejo de proveedores.</li>
- *   <li>2025-09-27 - Versión 1.3 - Modificada por Sarita: documentación.</li>
- * </ul>
+ * Historial de cambios:</p>
+ * 
+ *   2025-09-25 - Versión 1.2 - Modificada por Sarita: implementación inicial de flujo.
+ *   2025-09-26 - Versión 1.3 - Modificada por Juan: agregado manejo de acción manejo de proveedores.
+ *   2025-09-27 - Versión 1.3 - Modificada por Sarita: documentación.
+ * 
  * 
  * @author Sarita
  * @version 1.3
@@ -59,17 +60,15 @@ public class GestorVentanaInicio implements ActionListener {
     }
 /**
      * Maneja los eventos de los botones en la ventana de inicio.
-     * <p>
+     * 
      * Dependiendo del botón presionado:
-     * <ul>
-     *     <li><b>Usuarios:</b> abre la ventana de gestión de usuarios.</li>
-     *     <li><b>Proveedores:</b> abre la ventana de selección de tipo de proveedor,
-     *     verificando que existan proveedores registrados.</li>
-     *     <li><b>Administradores:</b> abre el formulario de inicio de sesión de administradores
-     *     usando la misma instancia de registro de proveedores.</li>
-     *     <li><b>Otros:</b> muestra un mensaje de acción no reconocida.</li>
-     * </ul>
-     * </p>
+     * 
+     *     Usuarios: abre la ventana de gestión de usuarios.
+     *     Proveedores: abre la ventana de selección de tipo de proveedor,
+     *     verificando que existan proveedores registrados.
+     *     Administradores: abre el formulario de inicio de sesión de administradores
+     *     usando la misma instancia de registro de proveedores.
+     * 
      * 
      * @param e evento generado al presionar un botón
      */
@@ -100,9 +99,9 @@ public class GestorVentanaInicio implements ActionListener {
         // Proveedores
         } else if (source == ventanaInicio.btnProveedores) {
             if (gestorProveedores.getProveedores() == null || gestorProveedores.getProveedores().isEmpty()) {
-                JOptionPane.showMessageDialog(ventanaInicio,
+                ventanaInicio.mostrarJOption2(ventanaInicio,
                         "️ No hay proveedores registrados. Debe registrarlos el administrador.",
-                        "Sin proveedores", JOptionPane.WARNING_MESSAGE);
+                        "Sin proveedores");
                 return;
             }
             VentanaSeleccionTipoProveedor seleccion = new VentanaSeleccionTipoProveedor();
@@ -119,7 +118,7 @@ public class GestorVentanaInicio implements ActionListener {
 
         // Acción no reconocida
         } else {
-            JOptionPane.showMessageDialog(ventanaInicio, "Acción no reconocida");
+            ventanaInicio.mostrarJOption(ventanaInicio, "Acción no reconocida");
         }
     }
 }

@@ -504,4 +504,12 @@ public class VentanaRegistroVehiculo extends JFrame {
         chkLucesLED.setSelected(false);
         chkAlarmaAntiRobo.setSelected(false);
     }
+    
+    public void mostrarJOptionError(Component componente, String mensaje){
+        JOptionPane.showMessageDialog(componente, mensaje, "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    
+    public void mostrarJOption(Component componente, String mensaje){
+        JOptionPane.showMessageDialog(componente, mensaje);
+    }
 }

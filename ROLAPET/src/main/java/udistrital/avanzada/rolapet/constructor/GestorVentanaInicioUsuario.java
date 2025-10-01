@@ -14,8 +14,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Gestor de la ventana inicio de usuario.
- * Corrige fallback al cerrar sesión y muestra correctamente publicaciones de proveedores.
+ * Gestor de la ventana inicio de usuario. Corrige fallback al cerrar sesión y
+ * muestra correctamente publicaciones de proveedores.
  */
 /**
  * Class GestorVentanaInicioUsuario.
@@ -24,17 +24,19 @@ import java.awt.event.ActionListener;
  * Class GestorVentanaInicioUsuario.
  */
 public class GestorVentanaInicioUsuario implements ActionListener {
+
     private VentanaInicioUsuario ventana;
     private Usuario usuarioActual;
     private RepositorioUsuarios repositorioUsuarios;
     private RepositorioPublicaciones repoPublicaciones;
     private JFrame ventanaPrincipal;
+    private ControladorUsuario controladorUsuario = new ControladorUsuario();
 
     public GestorVentanaInicioUsuario(VentanaInicioUsuario ventana,
-                                      Usuario usuarioActual,
-                                      RepositorioUsuarios repositorioUsuarios,
-                                      RepositorioPublicaciones repoPublicaciones,
-                                      JFrame ventanaPrincipal) {
+            Usuario usuarioActual,
+            RepositorioUsuarios repositorioUsuarios,
+            RepositorioPublicaciones repoPublicaciones,
+            JFrame ventanaPrincipal) {
         this.ventana = ventana;
         this.usuarioActual = usuarioActual;
         this.repositorioUsuarios = repositorioUsuarios;
@@ -49,25 +51,28 @@ public class GestorVentanaInicioUsuario implements ActionListener {
     }
 
     @Override
-/**
- * actionPerformed method.
- * @param e parameter
- * @return result
- */
-/**
- * actionPerformed method.
- * @param e parameter
- */
-/**
- * actionPerformed method.
- * @param e parameter
- */
+    /**
+     * actionPerformed method.
+     *
+     * @param e parameter
+     * @return result
+     */
+    /**
+     * actionPerformed method.
+     *
+     * @param e parameter
+     */
+    /**
+     * actionPerformed method.
+     *
+     * @param e parameter
+     */
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
 
         if (source == ventana.btnCerrarSesion) {
             // Cerrar solo la ventana de usuario y volver a la ventana inicial
-            JOptionPane.showMessageDialog(ventana, "Has cerrado sesión.");
+            ventana.mostrarJOption(ventana, "Has cerrado sesión.");
             ventana.dispose();
 
             if (ventanaPrincipal != null) {
@@ -76,35 +81,49 @@ public class GestorVentanaInicioUsuario implements ActionListener {
             } else {
                 // fallback seguro: reabrir la ventana de inicio principal
                 VentanaInicio ventanaInicio = new VentanaInicio();
-                ControladorUsuario controladorUsuario = new ControladorUsuario();
+
                 new GestorVentanaInicio(ventanaInicio, controladorUsuario);
                 ventanaInicio.setVisible(true);
             }
-        }
-        else if (source == ventana.btnAgregarAmigos) {
-            JOptionPane.showMessageDialog(ventana, "Funcionalidad en desarrollo: agregar amigos.");
-        }
-        else if (source == ventana.btnVerProveedores) {
+        } else if (source == ventana.btnAgregarAmigos) {
+            amigoAgregado(controladorUsuario.agregarAmigo(usuarioActual.getCedula(), LeerAmigo()));
+        } else if (source == ventana.btnVerProveedores) {
             mostrarPublicacionesProveedores();
-        }
-        else if (source == ventana.btnMostrarVehiculos) {
+        } else if (source == ventana.btnMostrarVehiculos) {
             mostrarVehiculosUsuario();
         }
     }
 
-/**
- * mostrarPublicacionesProveedores method.
- * @return result
- */
-/**
- * mostrarPublicacionesProveedores method.
- */
-/**
- * mostrarPublicacionesProveedores method.
- */
+    public String LeerAmigo() {
+        return ventana.leerCedulaAmigo();
+    }
+
+    /**
+     *
+     * @param flag
+     */
+    public void amigoAgregado(boolean flag) {
+        if (flag) {
+            ventana.mostrarJOption(ventana, "!Se ha encontrado a la persona y ha sido añadida a su lista de amigos¡");
+        } else {
+            ventana.mostrarJOption(ventana, "No se ha encontrado ningun usuario con ese numero de identificacion");
+        }
+    }
+
+    /**
+     * mostrarPublicacionesProveedores method.
+     *
+     * @return result
+     */
+    /**
+     * mostrarPublicacionesProveedores method.
+     */
+    /**
+     * mostrarPublicacionesProveedores method.
+     */
     private void mostrarPublicacionesProveedores() {
         if (repoPublicaciones == null || repoPublicaciones.listarPublicaciones().isEmpty()) {
-            JOptionPane.showMessageDialog(ventana, "No hay publicaciones de proveedores todavía.");
+            ventana.mostrarJOption(ventana, "No hay publicaciones de proveedores todavía.");
             return;
         }
 
@@ -113,19 +132,20 @@ public class GestorVentanaInicioUsuario implements ActionListener {
             // Publicacion.toString() ya formatea título, tipo, autor y fecha
             sb.append(pub.toString()).append("\n");
         }
-        JOptionPane.showMessageDialog(ventana, sb.toString(), "Proveedores", JOptionPane.INFORMATION_MESSAGE);
+        ventana.mostrarStringObjeto(ventana, sb, "Proveedores", JOptionPane.INFORMATION_MESSAGE);
     }
 
-/**
- * mostrarVehiculosUsuario method.
- * @return result
- */
-/**
- * mostrarVehiculosUsuario method.
- */
-/**
- * mostrarVehiculosUsuario method.
- */
+    /**
+     * mostrarVehiculosUsuario method.
+     *
+     * @return result
+     */
+    /**
+     * mostrarVehiculosUsuario method.
+     */
+    /**
+     * mostrarVehiculosUsuario method.
+     */
     private void mostrarVehiculosUsuario() {
         StringBuilder sb = new StringBuilder();
         if (usuarioActual == null || usuarioActual.getVehiculos().isEmpty()) {
@@ -134,8 +154,8 @@ public class GestorVentanaInicioUsuario implements ActionListener {
             sb.append("🚗 Tus vehículos:\n\n");
             for (Vehiculo v : usuarioActual.getVehiculos()) {
                 sb.append("- ").append(v.getMarca())
-                  .append(" ").append(v.getModelo())
-                  .append(" | Placa: ").append(v.getPlaca()).append("\n");
+                        .append(" ").append(v.getModelo())
+                        .append(" | Placa: ").append(v.getPlaca()).append("\n");
             }
         }
         JOptionPane.showMessageDialog(ventana, sb.toString(), "Mis Vehículos", JOptionPane.INFORMATION_MESSAGE);
@@ -160,16 +180,17 @@ public class GestorVentanaInicioUsuario implements ActionListener {
         }
     }
 
-/**
- * abrirVentanaRegistroVehiculo method.
- * @return result
- */
-/**
- * abrirVentanaRegistroVehiculo method.
- */
-/**
- * abrirVentanaRegistroVehiculo method.
- */
+    /**
+     * abrirVentanaRegistroVehiculo method.
+     *
+     * @return result
+     */
+    /**
+     * abrirVentanaRegistroVehiculo method.
+     */
+    /**
+     * abrirVentanaRegistroVehiculo method.
+     */
     private void abrirVentanaRegistroVehiculo() {
         // Usar el constructor existente en el proyecto
         VentanaRegistroVehiculo ventanaRegistro = new VentanaRegistroVehiculo();
@@ -180,16 +201,17 @@ public class GestorVentanaInicioUsuario implements ActionListener {
         ventana.setVisible(false); // ocultar temporalmente la ventana de inicio
     }
 
-/**
- * eliminarVehiculo method.
- * @return result
- */
-/**
- * eliminarVehiculo method.
- */
-/**
- * eliminarVehiculo method.
- */
+    /**
+     * eliminarVehiculo method.
+     *
+     * @return result
+     */
+    /**
+     * eliminarVehiculo method.
+     */
+    /**
+     * eliminarVehiculo method.
+     */
     private void eliminarVehiculo() {
         if (usuarioActual == null || usuarioActual.getVehiculos().isEmpty()) {
             JOptionPane.showMessageDialog(ventana, "No hay vehículos para eliminar.");

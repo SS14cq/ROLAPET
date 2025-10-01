@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package udistrital.avanzada.rolapet.constructor;
 
 import java.awt.event.ActionEvent;
@@ -27,7 +24,7 @@ import udistrital.avanzada.rolapet.vista.FormularioRegistro;
 public class ControladorRegistro implements ActionListener {
 
     private FormularioRegistro vista;
-    private GestorUsuario gestor;
+    private ControladorUsuario gestor;
     
     /**
      * Crea un controlador vinculado a una vista y un gestor de usuarios específicos.
@@ -36,7 +33,7 @@ public class ControladorRegistro implements ActionListener {
      * @param vista Vista del formulario de registro.
      * @param gestor Gestor que administra el registro de usuarios.
      */
-    public ControladorRegistro(FormularioRegistro vista, GestorUsuario gestor) {
+    public ControladorRegistro(FormularioRegistro vista, ControladorUsuario gestor) {
         this.vista = vista;
         this.gestor = gestor;
         this.vista.getBtnRegistrar().addActionListener(this);

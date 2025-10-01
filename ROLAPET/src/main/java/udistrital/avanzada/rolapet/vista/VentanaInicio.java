@@ -97,6 +97,7 @@ public class VentanaInicio extends JFrame {
 
         getContentPane().add(panelBotones);
         setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     /**
@@ -121,5 +122,12 @@ public class VentanaInicio extends JFrame {
         btnUsuarios.addActionListener(controlador);
         btnAdministradores.addActionListener(controlador);
         btnProveedores.addActionListener(controlador);
+    }
+    
+    public void mostrarJOption(Component Componente, String mensaje){
+        JOptionPane.showMessageDialog(Componente, mensaje);
+    }
+    public void mostrarJOption2(Component Componente, String mensaje, String titulo){
+        JOptionPane.showMessageDialog(Componente, mensaje, titulo, JOptionPane.WARNING_MESSAGE);
     }
 }

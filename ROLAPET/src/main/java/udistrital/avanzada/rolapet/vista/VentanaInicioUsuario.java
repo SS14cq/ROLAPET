@@ -9,7 +9,9 @@ import udistrital.avanzada.rolapet.modelo.Usuario;
 import udistrital.avanzada.rolapet.modelo.RepositorioUsuarios;
 
 /**
- * Ventana principal del usuario: muestra perfil, amigos, vehículos, publicaciones y búsqueda.
+ * Ventana principal del usuario: muestra perfil, amigos, vehículos,
+ * publicaciones y búsqueda.
+ *
  * @author Sarita
  * @version 1.0, 27-09-2025
  */
@@ -20,6 +22,7 @@ import udistrital.avanzada.rolapet.modelo.RepositorioUsuarios;
  * Class VentanaInicioUsuario.
  */
 public class VentanaInicioUsuario extends JFrame {
+
     private Usuario usuario;
     private RepositorioUsuarios repositorioUsuarios;
     private RepositorioPublicaciones repoPublicaciones;
@@ -35,7 +38,7 @@ public class VentanaInicioUsuario extends JFrame {
     private DefaultListModel<String> modeloLista;
 
     public VentanaInicioUsuario(Usuario usuario, RepositorioUsuarios repositorioUsuarios,
-                                RepositorioPublicaciones repoPublicaciones, JFrame ventanaPrincipal) {
+            RepositorioPublicaciones repoPublicaciones, JFrame ventanaPrincipal) {
         // Asignar atributos
         this.usuario = usuario;
         this.repositorioUsuarios = repositorioUsuarios;
@@ -122,21 +125,23 @@ public class VentanaInicioUsuario extends JFrame {
         panelIzquierdo.add(Box.createVerticalStrut(20));
         panelIzquierdo.add(btnCerrarSesion);
         add(panelIzquierdo, BorderLayout.WEST);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Cargar publicaciones iniciales
         cargarPublicaciones();
     }
 
-/**
- * cargarPublicaciones method.
- * @return result
- */
-/**
- * cargarPublicaciones method.
- */
-/**
- * cargarPublicaciones method.
- */
+    /**
+     * cargarPublicaciones method.
+     *
+     * @return result
+     */
+    /**
+     * cargarPublicaciones method.
+     */
+    /**
+     * cargarPublicaciones method.
+     */
     public void cargarPublicaciones() {
         modeloLista.clear();
         if (repoPublicaciones != null) {
@@ -147,22 +152,39 @@ public class VentanaInicioUsuario extends JFrame {
     }
 
     /**
-     * Asigna un ActionListener al botón Cerrar sesión para que el gestor pueda controlar el evento
+     * Asigna un ActionListener al botón Cerrar sesión para que el gestor pueda
+     * controlar el evento
      */
-/**
- * setCerrarSesionListener method.
- * @param listener parameter
- * @return result
- */
-/**
- * setCerrarSesionListener method.
- * @param listener parameter
- */
-/**
- * setCerrarSesionListener method.
- * @param listener parameter
- */
+    /**
+     * setCerrarSesionListener method.
+     *
+     * @param listener parameter
+     * @return result
+     */
+    /**
+     * setCerrarSesionListener method.
+     *
+     * @param listener parameter
+     */
+    /**
+     * setCerrarSesionListener method.
+     *
+     * @param listener parameter
+     */
     public void setCerrarSesionListener(ActionListener listener) {
         btnCerrarSesion.addActionListener(listener);
+    }
+
+    public String leerCedulaAmigo() {
+        return JOptionPane.showInputDialog(null, "!Digite el numero de cedula de la persona a enviar amistad¡\n", "Agregar Amigo", 3).trim();
+
+    }
+
+    public void mostrarJOption(Component componente, String mensaje) {
+        JOptionPane.showMessageDialog(componente, mensaje);
+    }
+
+    public void mostrarStringObjeto(Component objeto, StringBuilder mensaje, String n, int j) {
+        JOptionPane.showMessageDialog(objeto, mensaje, n, j);
     }
 }
